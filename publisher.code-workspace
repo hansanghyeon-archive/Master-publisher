@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+      "name": "🧩Publisher",
+			"path": "."
+		}
+	],
+  "settings": {
+    "files.exclude": {
+      ".github/": true
+    },
+    "editor.formatOnSave": true,
+    "workspace.exclude": {
+      ".github/": true
+    }
+  }
+}

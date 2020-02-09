@@ -1,0 +1,35 @@
+{
+  "name": "master-publisher",
+  "version": "0.0.0",
+  "description": "퍼블리셔 마스터를 꿈꾼다",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "publisher",
+    "storybook",
+    "css",
+    "design"
+  ],
+  "author": "Hansanghyeon",
+  "license": "ISC",
+  "dependencies": {
+    "framer-motion": "^1.8.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-links": "^5.3.12",
+    "@storybook/addons": "^5.3.12",
+    "@storybook/react": "^5.3.12",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^4.4.2",
+    "babel-loader": "^8.0.6"
+  }
+}
