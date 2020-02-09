@@ -17,5 +17,22 @@ module.exports = ({ config }) => {
     },
   });
   config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve.alias = {
+    '@src': path.resolve(__dirname, '../src/'),
+    '@utile': path.resolve(__dirname, '../src/utils'),
+    '@FM/atom': path.resolve(__dirname, '../src/components/FramerMotion/atoms'),
+    '@FM/molecule': path.resolve(
+      __dirname,
+      '../src/components/FramerMotion/molecules',
+    ),
+    '@FM/organism': path.resolve(
+      __dirname,
+      '../src/components/FramerMotion/organisms',
+    ),
+    '@FM/template': path.resolve(
+      __dirname,
+      '../src/components/FramerMotion/templates',
+    ),
+  };
   return config;
 };
