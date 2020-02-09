@@ -4,7 +4,7 @@
   "description": "퍼블리셔 마스터를 꿈꾼다",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook"
   },
   "keywords": [
@@ -23,6 +23,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
     "@storybook/addon-actions": "^5.3.12",
     "@storybook/addon-links": "^5.3.12",
     "@storybook/addons": "^5.3.12",
@@ -30,6 +32,9 @@
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^4.4.2",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5"
   }
 }
