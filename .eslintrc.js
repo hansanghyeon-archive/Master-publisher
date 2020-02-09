@@ -28,6 +28,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     '@typescript-eslint/eslint-plugin',
+    'import',
     'prettier',
   ],
   rules: {
