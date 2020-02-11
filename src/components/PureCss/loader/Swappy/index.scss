@@ -1,0 +1,61 @@
+$p: 6.25em;
+$r: 1.5em;
+$b: 20 * $r;
+$d: 2 * ($b - $r);
+$c: #490a3d, #e97f02;
+$n: length($c);
+$q: 20%;
+$t: 1s;
+
+.loader {
+  overflow: hidden;
+  position: relative;
+  padding: $p;
+  border-radius: 1em;
+  animation: fbg 2 * $n * $t steps(1) #{-$t} infinite,
+    fsc 2 * $t steps(1) infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -$r (-0.5 * $d - $r);
+    padding: $b;
+    transform-origin: 50% 0;
+    animation: fbg 2 * $n * $t steps(1) -3 * $t infinite,
+      mov $t infinite alternate, exp $t ease-in infinite alternate;
+  }
+}
+@keyframes fsc {
+  50% {
+    transform: scaley(-1);
+  }
+}
+@keyframes fbg {
+  @for $i from 0 to $n {
+    #{$i/$n*100%} {
+      background: nth($c, $i + 1);
+    }
+  }
+}
+
+@keyframes mov {
+  0%,
+  #{$q} {
+    transform: none;
+  }
+  100% {
+    transform: translatey($r) rotate(0.5turn);
+  }
+}
+
+@keyframes exp {
+  0%,
+  #{$q} {
+    clip-path: inset(0 0.5 * $d $d round 50%);
+  }
+  100% {
+    clip-path: inset(0 round 50%/ 0);
+  }
+}
