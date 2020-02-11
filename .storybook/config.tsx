@@ -1,6 +1,7 @@
 import React from 'react';
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { createGlobalStyle } from 'styled-components';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -21,6 +22,10 @@ addParameters({
   viewport: {
     defaultViewport: 'someDefualt',
   },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
 });
 
 addDecorator(story => (
@@ -31,6 +36,6 @@ addDecorator(story => (
 ));
 
 configure(
-  require.context('../src/components', true, /\.stories\.tsx$/),
+  require.context('../src/components', true, /\.stories\.(tsx|mdx)$/),
   module,
 );

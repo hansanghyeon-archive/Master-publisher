@@ -38,6 +38,7 @@ module.exports = {
         extensions: ['.tsx'],
       },
     ],
+    'react/jsx-props-no-spreading': [0],
     'prettier/prettier': 'error',
     'no-unused-vars': 'warn',
     'func-names': 'off',
