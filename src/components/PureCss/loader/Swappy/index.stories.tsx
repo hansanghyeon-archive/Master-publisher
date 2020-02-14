@@ -18,6 +18,6 @@ export const Swappy = () => {
 };
 
 export default {
-  title: 'Pure css|loader/swappy',
+  title: 'Pure css/loader/swappy',
   component: Swappy,
 };

@@ -16,6 +16,10 @@ module.exports = ({ config }) => {
       presets: [['react-app', { flow: false, typescript: true }]],
     },
   });
+  config.module.rules.push({
+    test: /\.scss$/,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+  });
   config.resolve.extensions.push('.ts', '.tsx');
   config.resolve.alias = {
     '@src': path.resolve(__dirname, '../src/'),

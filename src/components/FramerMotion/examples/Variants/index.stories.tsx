@@ -2,7 +2,7 @@ import React from 'react';
 import Variants from '.';
 
 export default {
-  title: 'Framer Motion|Example/Variants',
+  title: 'Framer motion/Example/Variants',
   component: Variants,
 };
 

@@ -2,6 +2,10 @@ import React from 'react';
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab);
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -19,12 +23,12 @@ addParameters({
     { name: 'dark', value: '#232326', default: true },
     { name: 'light', value: '#fff' },
   ],
-  viewport: {
-    defaultViewport: 'someDefualt',
-  },
   docs: {
     container: DocsContainer,
     page: DocsPage,
+  },
+  options: {
+    showRoots: true,
   },
 });
 

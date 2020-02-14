@@ -2,7 +2,7 @@ import React from 'react';
 import MenuToggle from '.';
 
 export default {
-  title: 'framer motion|Atoms/Button/MenuToggle',
+  title: 'framer motion/Atoms/Button/MenuToggle',
   component: MenuToggle,
 };
 

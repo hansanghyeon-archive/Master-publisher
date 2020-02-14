@@ -2,7 +2,7 @@ import React from 'react';
 import KeyFrame from '.';
 
 export default {
-  title: 'Framer motion|Example/KeyFrames',
+  title: 'Framer motion/Example/KeyFrames',
   component: KeyFrame,
 };
 
