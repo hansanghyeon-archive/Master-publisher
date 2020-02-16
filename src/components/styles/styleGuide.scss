@@ -1,0 +1,21 @@
+.sbdocs-wrapper {
+  min-height: 100%;
+  background-color: #181c27 !important;
+  box-sizing: border-box;
+  color: #676e7b;
+  h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  h2,
+  h3,
+  h4 {
+    color: darken($color: #fff, $amount: 30);
+    margin-bottom: 1rem;
+  }
+}
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+}
