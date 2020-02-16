@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import '@src/components/styles/style.css';
 
 library.add(fab);
 
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     outline: none;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 `;
 

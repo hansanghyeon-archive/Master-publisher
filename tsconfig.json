@@ -56,17 +56,23 @@
       "@src/*": [
         "src/*"
       ],
-      "@FM/atom/*": [
-        "src/components/FramerMotion/atoms/*"
+      "@atom/*": [
+        "src/components/atoms/*"
       ],
-      "@FM/molecule/*": [
-        "src/components/FramerMotion/molecules/*"
+      "@molecule/*": [
+        "src/components/molecules/*"
       ],
-      "@FM/organism/*": [
-        "src/components/FramerMotion/organisms/*"
+      "@organism/*": [
+        "src/components/organisms/*"
       ],
-      "@FM/template/*": [
-        "src/components/FramerMotion/templates/*"
+      "@template/*": [
+        "src/components/templates/*"
+      ],
+      "@animation/*": [
+        "src/components/animations/*"
+      ],
+      "@style/*": [
+        "src/components/styles/*"
       ],
       "@utile/*": [
         "src/utils/*"

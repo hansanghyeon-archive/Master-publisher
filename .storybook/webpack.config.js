@@ -23,20 +23,13 @@ module.exports = ({ config }) => {
   config.resolve.extensions.push('.ts', '.tsx');
   config.resolve.alias = {
     '@src': path.resolve(__dirname, '../src/'),
+    '@atom': path.resolve(__dirname, '../src/components/atoms'),
+    '@molecule': path.resolve(__dirname, '../src/components/molecules'),
+    '@organism': path.resolve(__dirname, '../src/components/organisms'),
+    '@template': path.resolve(__dirname, '../src/components/templates'),
+    '@animation': path.resolve(__dirname, '../src/components/animations'),
+    '@style': path.resolve(__dirname, '../src/components/styles'),
     '@utile': path.resolve(__dirname, '../src/utils'),
-    '@FM/atom': path.resolve(__dirname, '../src/components/FramerMotion/atoms'),
-    '@FM/molecule': path.resolve(
-      __dirname,
-      '../src/components/FramerMotion/molecules',
-    ),
-    '@FM/organism': path.resolve(
-      __dirname,
-      '../src/components/FramerMotion/organisms',
-    ),
-    '@FM/template': path.resolve(
-      __dirname,
-      '../src/components/FramerMotion/templates',
-    ),
   };
   return config;
 };
