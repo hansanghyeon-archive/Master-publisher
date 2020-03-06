@@ -2,7 +2,7 @@ import React from 'react';
 import Wrap from '.';
 
 export default {
-  title: 'atoms/Wrap',
+  title: 'atoms/Wrap/Framer',
   component: Wrap,
 };
 
