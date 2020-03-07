@@ -2,16 +2,16 @@ import React from 'react';
 // Context
 import CenterWrap from '@atom/wrap/Center';
 // Components
-import NotionStyle from '.';
+import NotionStyleList from '.';
 
 export default {
   title: 'atoms/List/NotionStyle',
-  component: NotionStyle,
+  component: NotionStyleList,
 };
 export const standard = () => (
-  <NotionStyle imgSrc="https://wp.hapas.io/wp-content/uploads/React.png">
+  <NotionStyleList imgSrc="https://wp.hapas.io/wp-content/uploads/React.png">
     React
-  </NotionStyle>
+  </NotionStyleList>
 );
 standard.story = {
   decorators: [(storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>],
