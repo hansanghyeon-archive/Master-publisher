@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     outline: none;
     font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
   }
   body {
     background-color: ${({ theme }: any) => theme?.color.bg[0]};
