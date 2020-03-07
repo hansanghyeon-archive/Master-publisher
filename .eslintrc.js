@@ -20,6 +20,9 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      ts: true,
+      tsx: true,
+      js: true,
     },
     project: path.join(__dirname, 'tsconfig.json'),
     ecmaVersion: 11,
@@ -35,7 +38,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.tsx'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
       },
     ],
     'react/jsx-props-no-spreading': [0],
