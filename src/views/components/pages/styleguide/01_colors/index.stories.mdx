@@ -1,37 +1,14 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import '@style/styleGuide.scss';
-import DarkColors from './DarkColors.tsx';
-import LightColors from './LightColors.tsx';
-import DarkGrayscales from './DarkGrayscales.tsx';
-import LightGrayscales from './LightGrayscales.tsx';
-import Dim from '@atom/wrap/Dim';
+import Colors from './Colors.tsx';
+import Grayscales from './Grayscales.tsx';
+import { createGlobalStyle } from 'styled-components';
 
 <Meta title="Style guid/4log/01. Colors" />
 
 # Colors
 
-#### Dark Mode
+<Colors />
 
-<DarkColors />
+## Grayscales
 
-#### light Mode
-
-<LightColors />
-<br />
-
-# Grayscales
-
-#### Dark Mode
-
-<DarkGrayscales />
-
-#### Light Mode
-
-<Dim>
-  <LightGrayscales />
-</Dim>
-<br />
-
-# Gradients
-
-# Alert
+<Grayscales />

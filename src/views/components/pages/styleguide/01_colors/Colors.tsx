@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+
 import ColorPreview from '@atom/wrap/ColorPreview';
-import lightModeTheme from '@style/4log/lightModeTheme';
+import DefaultTheme from '@style/themes/4log';
 
 const Ul = styled.ul`
   display: flex;
@@ -16,25 +17,18 @@ const Li = styled.li`
   row-gap: 10px;
 `;
 const PrimaryColorPreview = styled(ColorPreview)`
-  background-color: ${props => props.theme.color.primary};
-`;
-const PrimaryDarkColorPreview = styled(ColorPreview)`
-  background-color: ${props => props.theme.color.primaryLight};
+  background-color: ${({ theme }) => theme.color.primary};
 `;
 
-const LightColors = () => (
-  <ThemeProvider theme={lightModeTheme}>
+const Colors = () => (
+  <ThemeProvider theme={DefaultTheme}>
     <Ul>
       <Li>
         <PrimaryColorPreview />
         <span>Primary</span>
       </Li>
-      <Li>
-        <PrimaryDarkColorPreview />
-        <span>Primary Light</span>
-      </Li>
     </Ul>
   </ThemeProvider>
 );
 
-export default LightColors;
+export default Colors;

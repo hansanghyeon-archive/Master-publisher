@@ -11,12 +11,10 @@ interface Colors {
 }
 
 interface DarkColors extends Colors {}
-interface LightColors extends Colors {}
 interface StyleSystem {
   color: Colors;
 }
 
 export interface DarkStyleSystem extends StyleSystem {}
-export interface LightStyleSystem extends StyleSystem {}
 
 export default StyleSystem;

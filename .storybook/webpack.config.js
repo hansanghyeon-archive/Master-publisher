@@ -23,13 +23,18 @@ module.exports = ({ config }) => {
   config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx');
   config.resolve.alias = {
     '@src': path.resolve(__dirname, '../src/'),
+    // Views
+    '@view': path.resolve(__dirname, '../src/views'),
     '@atom': path.resolve(__dirname, '../src/views/components/atoms'),
     '@molecule': path.resolve(__dirname, '../src/views/components/molecules'),
     '@organism': path.resolve(__dirname, '../src/views/components/organisms'),
     '@template': path.resolve(__dirname, '../src/views/components/templates'),
     '@animation': path.resolve(__dirname, '../src/views/components/animations'),
-    '@style': path.resolve(__dirname, '../src/views/components/styles'),
+    '@style': path.resolve(__dirname, '../src/views/styles'),
+    // Utilities
     '@utile': path.resolve(__dirname, '../src/utilites'),
+    // Models
+    '@model': path.resolve(__dirname, '../src/models'),
   };
   return config;
 };

@@ -1,26 +1,6 @@
-interface breakpoint {
-  xl: number;
-  lg: number;
-  md: number;
-  sm: number;
-  xs: number;
-}
+import GridSystem from '@model/GridSystem';
 
-interface gridSystem {
-  breakpoints: breakpoint;
-  row: {
-    padding: number;
-  };
-  col: {
-    padding: number;
-  };
-  container: {
-    padding: number;
-    maxWidth: breakpoint;
-  };
-}
-
-const gridSystem: gridSystem = {
+const gridSystem: GridSystem = {
   breakpoints: {
     // defaults below
     xl: 1200,

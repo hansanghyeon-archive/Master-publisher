@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import './style.scss';
+import '@atom/toggle/Menu/style.scss';
 
 const StyledBtn = styled.button`
   width: 36px;
@@ -12,6 +12,9 @@ const StyledBtn = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+  svg {
+    stroke: ${({ theme }) => theme.color.text[0]};
+  }
 `;
 
 const MenuBtn = () => {

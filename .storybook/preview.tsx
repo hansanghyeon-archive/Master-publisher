@@ -1,24 +1,37 @@
 import React from 'react';
-import { configure, addParameters, addDecorator } from '@storybook/react';
+import { addParameters, addDecorator } from '@storybook/react';
 import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { withThemesProvider } from 'themeprovider-storybook';
+import themes from '../src/views/styles/themes';
 
 const GlobalStyle = createGlobalStyle`
-  html, body, #root {
+  html, body, #root, #docs-root {
     height: 100%;
     padding: 0;
     margin: 0;
+  }
+  .sbdocs-wrapper {
+    height: 100%;
+    box-sizing: border-box;
   }
   * {
     outline: none;
     font-family: 'Noto Sans KR', sans-serif;
   }
+  body {
+    background-color: ${({ theme }: any) => theme?.color.bg[0]};
+  }
 `;
 
 addParameters({
   docs: {
-    container: DocsContainer,
+    container: ({ context, children }) => (
+      <DocsContainer context={{ ...context }}>
+        <GlobalStyle />
+        {children}
+      </DocsContainer>
+    ),
     page: DocsPage,
   },
   options: {
@@ -33,9 +46,4 @@ addDecorator(story => (
   </>
 ));
 
-// addDecorator(withThemesProvider(themes));
-
-configure(
-  require.context('../src/views/components', true, /\.stories\.(tsx|mdx)$/),
-  module,
-);
+addDecorator(withThemesProvider(themes));
