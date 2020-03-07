@@ -2,11 +2,7 @@ import React from 'react';
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import '@src/components/styles/style.css';
-
-library.add(fab);
+import { withThemesProvider } from 'themeprovider-storybook';
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -21,10 +17,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 addParameters({
-  backgrounds: [
-    { name: 'dark', value: '#232326', default: true },
-    { name: 'light', value: '#fff' },
-  ],
   docs: {
     container: DocsContainer,
     page: DocsPage,
@@ -41,7 +33,9 @@ addDecorator(story => (
   </>
 ));
 
+// addDecorator(withThemesProvider(themes));
+
 configure(
-  require.context('../src/components', true, /\.stories\.(tsx|mdx)$/),
+  require.context('../src/views/components', true, /\.stories\.(tsx|mdx)$/),
   module,
 );
