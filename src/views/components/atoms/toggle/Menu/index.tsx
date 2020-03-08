@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import '@atom/toggle/Menu/style.scss';
+import './style.scss';
 
 const StyledBtn = styled.button`
   width: 36px;
