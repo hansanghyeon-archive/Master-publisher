@@ -13,7 +13,7 @@ const CenterWrap = styled.div`
 `;
 
 export default {
-  title: 'Atoms/alert/neon',
+  title: '01. atoms/alert/neon',
   decorators: [(storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>],
 };
 

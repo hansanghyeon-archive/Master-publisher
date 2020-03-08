@@ -7,13 +7,18 @@ import Callout from '.';
 import previews from './previews/index';
 
 export default {
-  title: 'molecules/Callout',
+  title: '02. molecules/Callout',
   component: Callout,
   decorators: [
     withKnobs,
     withPreview,
     (storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>,
   ],
+  parameters: {
+    options: {
+      storySort: 999,
+    },
+  },
 };
 
 const mockData = {

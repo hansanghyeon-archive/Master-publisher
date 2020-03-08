@@ -2,7 +2,7 @@ import React from 'react';
 import Refresh from '.';
 
 export default {
-  title: 'atoms/Button/Refresh',
+  title: '01. atoms/Button/Refresh',
   component: Refresh,
 };
 

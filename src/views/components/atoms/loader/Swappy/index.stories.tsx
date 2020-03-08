@@ -18,6 +18,6 @@ export const Swappy = () => {
 };
 
 export default {
-  title: 'atoms/loader/swappy',
+  title: '01. atoms/loader/swappy',
   component: Swappy,
 };

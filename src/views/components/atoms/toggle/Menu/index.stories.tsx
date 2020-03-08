@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default {
-  title: 'atoms/Toggle/Menu',
+  title: '01. atoms/Toggle/Menu',
   component: MenuBtn,
 };
 
