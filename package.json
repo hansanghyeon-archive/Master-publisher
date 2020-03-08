@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6007 -s ./static",
-    "build-storybook": "build-storybook"
+    "build": "build-storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages",
+    "deploy": "rm -fr .out && npm run build && echo 'publisher.hapas.io' > '.out/CNAME' && storybook-to-ghpages --existing-output-dir=.out"
   },
   "keywords": [
     "publisher",
@@ -18,6 +20,7 @@
     "url": "git+https://github.com/Hansanghyeon/Master-publisher/"
   },
   "author": "Hansanghyeon",
+  "homepage": "publisher.hapas.io",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -46,12 +49,14 @@
     "@storybook/addon-viewport": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/react": "^5.3.14",
+    "@storybook/storybook-deployer": "^2.8.3",
     "@storybook/theming": "^5.3.14",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
+    "acorn": "^7.1.1",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.1.1",
     "css-loader": "^3.4.2",
@@ -87,5 +92,10 @@
     "*.ts": [
       "eslint --fix"
     ]
+  },
+  "storybook-deployer": {
+    "gitUsername": "Hansanghyeon",
+    "gitEmail": "dandan9509@gmail.com",
+    "commitMessage": "Deploy Storybook [skip ci]"
   }
 }
