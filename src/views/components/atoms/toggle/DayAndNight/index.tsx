@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.scss';
+import './index.style.scss';
 
 const DayAndNightToggle = () => {
   const [isOn, setIsOn] = useState(false);
