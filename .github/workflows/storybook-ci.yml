@@ -1,0 +1,17 @@
+name: Storybook CI
+
+on:
+  # push:
+  #   branches: [develop]
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run npm install
+        run: npm install
+      - name: Run Storybook build Test
+        run: npm run build
