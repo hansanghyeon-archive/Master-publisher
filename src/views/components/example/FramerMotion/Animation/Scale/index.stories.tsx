@@ -2,7 +2,7 @@ import React from 'react';
 import Scale from '.';
 
 export default {
-  title: 'demo/Framer motion/Example/Animation/Scale',
+  title: 'example/Framer motion/Animation/Scale',
   component: Scale,
 };
 
