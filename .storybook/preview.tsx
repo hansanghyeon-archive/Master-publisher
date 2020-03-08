@@ -1,5 +1,5 @@
 import React from 'react';
-import { addParameters, addDecorator } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
 import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { withThemesProvider } from 'themeprovider-storybook';
@@ -37,6 +37,10 @@ addParameters({
   },
   options: {
     showRoots: true,
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
 });
 
@@ -48,3 +52,7 @@ addDecorator(story => (
 ));
 
 addDecorator(withThemesProvider(themes));
+configure(
+  require.context('../src/views/components', true, /\.stories\.(tsx|mdx)$/),
+  module,
+);
