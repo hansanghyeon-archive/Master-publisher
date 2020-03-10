@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   .sbdocs-wrapper {
-    height: 100%;
+    min-height: 100%;
     box-sizing: border-box;
   }
   * {
