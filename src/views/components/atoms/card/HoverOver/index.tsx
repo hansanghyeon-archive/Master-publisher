@@ -118,9 +118,9 @@ interface State {
 interface imgSrc {
   imgSrc: string;
 }
-interface Props extends imgSrc {
+export interface Props extends imgSrc {
   title: string;
-  content: React.ReactNode;
+  content: string;
 }
 const HoverOverCard = ({ imgSrc, title, content }: Props) => {
   const CardRef = useRef<HTMLDivElement>(null);
