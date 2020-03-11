@@ -71,8 +71,11 @@ const Card = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px,
     inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
-  transition: 1s $returnEasing;
   overflow: hidden;
+  &.reset {
+    transform: rotateY(0deg) rotateX(0deg) !important;
+    transition: all 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
 `;
 
 const CardWrap = styled.div`
@@ -110,6 +113,7 @@ interface State {
   mouseX: number;
   mouseY: number;
   mouseLeaveDelay: ReturnType<typeof setTimeout>;
+  cardStyleReset: boolean;
 }
 interface imgSrc {
   imgSrc: string;
@@ -126,12 +130,14 @@ const HoverOverCard = ({ imgSrc, title, content }: Props) => {
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
   const [mouseLeaveDelay, setMouseLeaveDelay] = useState(0);
+  const [cardStyleReset, setCardStyleReset] = useState(false);
   const useStates: State = {
     width,
     height,
     mouseX,
     mouseY,
     mouseLeaveDelay,
+    cardStyleReset,
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -142,13 +148,13 @@ const HoverOverCard = ({ imgSrc, title, content }: Props) => {
 
   const handleMouseEnter = () => {
     clearTimeout(useStates.mouseLeaveDelay);
+    setCardStyleReset(false);
   };
 
   const handleMouseLeave = () => {
     setMouseLeaveDelay(
       setTimeout(() => {
-        setMouseX(0);
-        setMouseY(0);
+        setCardStyleReset(true);
       }, 1000),
     );
   };
@@ -176,7 +182,7 @@ const HoverOverCard = ({ imgSrc, title, content }: Props) => {
       onMouseEnter={() => handleMouseEnter()}
       onMouseLeave={() => handleMouseLeave()}
     >
-      <Card style={cardStyle()}>
+      <Card style={cardStyle()} className={cardStyleReset ? 'reset' : ''}>
         <CardBg imgSrc={imgSrc} style={cardBgTransform()} />
         <CardInfo>
           <h1 className="header">{title}</h1>

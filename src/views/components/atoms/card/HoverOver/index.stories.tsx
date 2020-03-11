@@ -15,10 +15,7 @@ export default {
 
 export const standard = () => {
   const props = {
-    imgSrc: text(
-      'Image src',
-      'https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=',
-    ),
+    imgSrc: text('Image src', 'https://source.unsplash.com/collection/9641990'),
     title: text('Title', 'Canyons'),
     content: text(
       'Contnet',
