@@ -1,9 +1,11 @@
 import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs';
+import { withPreview } from 'storybook-addon-preview';
 import styled from 'styled-components';
 
 import CenterWrap from '@atom/wrap/Center';
 import HoverOverCard, { Props } from '.';
+import previews from './previews/index';
 
 const FlexBox = styled.div`
   display: flex;
@@ -14,6 +16,7 @@ export default {
   component: HoverOverCard,
   decorators: [
     withKnobs,
+    withPreview,
     (storyFn: any) => (
       <CenterWrap>
         <FlexBox>{storyFn()}</FlexBox>
@@ -65,4 +68,10 @@ export const standard = () => {
     const props = KnobsGroup(data);
     return <HoverOverCard {...props} />;
   });
+};
+
+standard.story = {
+  parameters: {
+    preview: previews,
+  },
 };

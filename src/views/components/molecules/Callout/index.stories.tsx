@@ -14,11 +14,6 @@ export default {
     withPreview,
     (storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>,
   ],
-  parameters: {
-    options: {
-      storySort: 999,
-    },
-  },
 };
 
 const mockData = {
