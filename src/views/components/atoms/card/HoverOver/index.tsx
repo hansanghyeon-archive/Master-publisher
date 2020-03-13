@@ -1,6 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+const CardRoot = styled.div`
+  display: flex;
+`;
+
 const CardInfo = styled.div`
   padding: 20px;
   position: absolute;
@@ -176,20 +180,22 @@ const HoverOverCard = ({ imgSrc, title, content }: Props) => {
     setHeight(CardEl.offsetHeight);
   }, [width, height, mouseX, mouseY, mouseLeaveDelay]);
   return (
-    <CardWrap
-      ref={CardRef}
-      onMouseMove={e => handleMouseMove(e)}
-      onMouseEnter={() => handleMouseEnter()}
-      onMouseLeave={() => handleMouseLeave()}
-    >
-      <Card style={cardStyle()} className={cardStyleReset ? 'reset' : ''}>
-        <CardBg imgSrc={imgSrc} style={cardBgTransform()} />
-        <CardInfo>
-          <h1 className="header">{title}</h1>
-          <p>{content}</p>
-        </CardInfo>
-      </Card>
-    </CardWrap>
+    <CardRoot>
+      <CardWrap
+        ref={CardRef}
+        onMouseMove={e => handleMouseMove(e)}
+        onMouseEnter={() => handleMouseEnter()}
+        onMouseLeave={() => handleMouseLeave()}
+      >
+        <Card style={cardStyle()} className={cardStyleReset ? 'reset' : ''}>
+          <CardBg imgSrc={imgSrc} style={cardBgTransform()} />
+          <CardInfo>
+            <h1 className="header">{title}</h1>
+            <p>{content}</p>
+          </CardInfo>
+        </Card>
+      </CardWrap>
+    </CardRoot>
   );
 };
 
