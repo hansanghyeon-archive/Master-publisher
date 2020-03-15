@@ -5,7 +5,7 @@ const Wrap = styled.div`
   display: grid;
   grid-template-columns: 25px auto;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 4px;
   img {
     width: 25px;
     margin-bottom: 0;
@@ -14,7 +14,13 @@ const Wrap = styled.div`
 
 const NotionStyleList = ({ imgSrc, children }: any) => (
   <Wrap>
-    <img src={imgSrc} alt="" />
+    {imgSrc ? (
+      <img src={imgSrc} alt="" />
+    ) : (
+      <span role="img" aria-label="page">
+        📄
+      </span>
+    )}
     <span>{children}</span>
   </Wrap>
 );
