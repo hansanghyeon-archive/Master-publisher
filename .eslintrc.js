@@ -41,6 +41,14 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
       },
     ],
+    'jsx-a11y/anchor-is-valid': [
+      'off',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['noHref', 'invalidHref', 'preferButton'],
+      },
+    ],
     'react/jsx-props-no-spreading': [0],
     'prettier/prettier': 'error',
     'no-unused-vars': 'warn',
