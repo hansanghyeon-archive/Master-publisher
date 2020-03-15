@@ -5,7 +5,7 @@ import CenterWrap from '@atom/wrap/Center';
 import NotionStyleList from '.';
 
 export default {
-  title: '01. atoms/List/NotionStyle',
+  title: '01. atoms/List Item/NotionStyle',
   component: NotionStyleList,
 };
 export const standard = () => (
