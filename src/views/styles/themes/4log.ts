@@ -16,6 +16,7 @@ export const DarkTheme: StyleSystem = {
   color: {
     ...DefaultTheme.color,
     bg: ['#232326'],
+    text: ['#f2f4f7'],
   },
 };
 

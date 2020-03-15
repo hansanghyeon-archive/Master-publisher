@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Center = styled.section`
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
 `;

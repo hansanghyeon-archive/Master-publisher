@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: ${({ theme }: any) => theme?.color.bg[0]};
+    color: ${({ theme }: any) => theme?.color.text[0]};
   }
 `;
 
