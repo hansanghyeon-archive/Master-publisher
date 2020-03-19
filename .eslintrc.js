@@ -56,6 +56,8 @@ module.exports = {
     'no-process-exit': 'off',
     'object-shorthand': 'off',
     'class-methods-use-this': 'off',
+    'react/jsx-props-no-spreading': [0],
+    'no-underscore-dangle': [0],
   },
   settings: {
     'import/resolver': {
