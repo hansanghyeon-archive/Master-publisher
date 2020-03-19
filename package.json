@@ -30,6 +30,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@storybook/addon-knobs": "^5.3.17",
     "framer-motion": "^1.8.4",
+    "gsap": "^3.2.4",
     "polished": "^3.4.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
