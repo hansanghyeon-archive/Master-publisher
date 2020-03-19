@@ -1,0 +1,59 @@
+#storybook-panel-root div {
+  outline: none;
+}
+
+* {
+  font-family: 'Fira Code', monospace;
+}
+
+html body {
+  background-color: #182125;
+}
+
+html .css-p2g82z,
+html .css-7w81sv,
+html .css-1lrnbsi {
+  background-color: #263238;
+}
+
+/* Code Preview Panel */
+html .preview-tabs {
+  margin-top: 0;
+  background-color: #182125;
+  min-height: 100%;
+  color: #f8f8f2;
+}
+html .preview-tabs > ul[role='tablist'] li {
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+html .preview-tabs > ul[role='tablist'] li:after {
+  content: none;
+}
+html .preview-tabs > ul[role='tablist'] li:hover {
+  color: #50fa7b;
+  transition: all .3s;
+}
+.react-tabs__tab--selected {
+  background-color: transparent;
+  color: #50fa7b;
+  font-weight: bold;
+  border: none;
+}
+html .react-tabs__tab-list {
+  background-color: #263238;
+  border: none;
+  margin-bottom: 0;
+}
+html .panel .code-preview>pre {
+  padding-top: 8px;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: none;
+}
