@@ -114,9 +114,9 @@ const EmailInput: React.FC = () => {
   const elInput = useRef<HTMLInputElement>(null);
   const elWrap = useRef<HTMLDivElement>(null);
   const emailRule = new RegExp(
-    '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
-      '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
-      '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
+    '^(([^<>()[]\\.,;:s@"]+(.[^<>()[]\\.,;:s@"]+)*)|' +
+      '(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])' +
+      '|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$',
   );
   const _sendQuery = (query: string) => setResult(emailRule.test(query));
   const _delayFunction = (query: string) => {
