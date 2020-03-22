@@ -3,7 +3,7 @@ import StyleSystem from '@model/StyleSystem';
 const DefaultTheme: StyleSystem = {
   color: {
     primary: '#0f4c81',
-    bg: ['#f2f4f7'],
+    bg: ['#f6f8ff'],
     text: ['#333'],
     grayscales: {
       dark: ['#12171f', '#161a23', '#181c27', '#1f2330', '#252836', '#303645'],

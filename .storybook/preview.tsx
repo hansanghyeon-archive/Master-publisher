@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     outline: none;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans','Noto Sans KR', sans-serif;
     box-sizing: border-box;
   }
   body {
@@ -45,7 +45,7 @@ addParameters({
   },
 });
 
-addDecorator(story => (
+addDecorator((story) => (
   <>
     <GlobalStyle />
     {story()}
