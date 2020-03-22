@@ -6,7 +6,7 @@ import { withThemesProvider } from 'themeprovider-storybook';
 import themes from '../src/views/styles/themes';
 
 const GlobalStyle = createGlobalStyle`
-  html, body, #root, #docs-root {
+  html, body, #root {
     height: 100%;
     padding: 0;
     margin: 0;
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans','Noto Sans KR', sans-serif;
     box-sizing: border-box;
   }
-  body {
+  body, .sbdocs-wrapper, .sbdocs-preview {
     background-color: ${({ theme }: any) => theme?.color.bg[0]};
     color: ${({ theme }: any) => theme?.color.text[0]};
   }
