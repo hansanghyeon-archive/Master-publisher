@@ -5,7 +5,6 @@ const Wrap = styled.div`
   display: grid;
   grid-template-columns: 16px auto;
   column-gap: 8px;
-  font-size: 14px;
   > div {
     align-self: center;
   }
@@ -16,6 +15,7 @@ const ImgWrap = styled.div`
   justify-content: center;
   overflow: hidden;
   border-radius: 3px;
+  text-align: center;
   img {
     width: 100%;
     margin-bottom: 0;
