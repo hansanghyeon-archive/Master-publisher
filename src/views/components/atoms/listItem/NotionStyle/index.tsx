@@ -3,25 +3,44 @@ import styled from 'styled-components';
 
 const Wrap = styled.div`
   display: grid;
-  grid-template-columns: 25px auto;
+  grid-template-columns: 16px auto;
+  column-gap: 8px;
+  font-size: 14px;
+  > div {
+    align-self: center;
+  }
+`;
+const ImgWrap = styled.div`
+  display: flex;
   align-items: center;
-  column-gap: 4px;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 3px;
   img {
-    width: 25px;
+    width: 100%;
     margin-bottom: 0;
   }
 `;
 
-const NotionStyleListItem = ({ imgSrc, children }: any) => (
+interface Props {
+  imgSrc?: string;
+  children: React.ReactNode;
+}
+
+const NotionStyleListItem = ({ imgSrc, children }: Props) => (
   <Wrap>
-    {imgSrc ? (
-      <img src={imgSrc} alt="" />
-    ) : (
-      <span role="img" aria-label="page">
-        📄
-      </span>
-    )}
-    <span>{children}</span>
+    <ImgWrap>
+      {imgSrc ? (
+        <img src={imgSrc} alt="" />
+      ) : (
+        <span role="img" aria-label="page">
+          📄
+        </span>
+      )}
+    </ImgWrap>
+    <div>
+      <span>{children}</span>
+    </div>
   </Wrap>
 );
 
