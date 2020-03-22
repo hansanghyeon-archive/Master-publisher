@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body, .sbdocs-wrapper, .sbdocs-preview {
-    background-color: ${({ theme }: any) => theme?.color.bg[0]};
+    background-color: ${({ theme }: any) => theme?.color.bg[1]};
     color: ${({ theme }: any) => theme?.color.text[0]};
   }
 `;
