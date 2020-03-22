@@ -12,7 +12,7 @@ const Wrap = styled.div`
   }
 `;
 
-const NotionStyleList = ({ imgSrc, children }: any) => (
+const NotionStyleListItem = ({ imgSrc, children }: any) => (
   <Wrap>
     {imgSrc ? (
       <img src={imgSrc} alt="" />
@@ -25,4 +25,4 @@ const NotionStyleList = ({ imgSrc, children }: any) => (
   </Wrap>
 );
 
-export default NotionStyleList;
+export default NotionStyleListItem;

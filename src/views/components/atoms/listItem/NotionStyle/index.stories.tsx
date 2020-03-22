@@ -4,11 +4,11 @@ import { withPreview } from 'storybook-addon-preview';
 // Context
 import CenterWrap from '@atom/wrap/Center';
 // Components
-import NotionStyleList from '.';
+import NotionStyleListItem from '.';
 
 export default {
   title: '01. atoms/List Item/NotionStyle',
-  component: NotionStyleList,
+  component: NotionStyleListItem,
   decorators: [
     withKnobs,
     withPreview,
@@ -21,5 +21,5 @@ export const standard = () => {
     'https://wp.hapas.io/wp-content/uploads/icons/React.png',
   );
   const Text = text('Text', 'React');
-  return <NotionStyleList imgSrc={imgSrc}>{Text}</NotionStyleList>;
+  return <NotionStyleListItem imgSrc={imgSrc}>{Text}</NotionStyleListItem>;
 };
