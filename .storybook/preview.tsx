@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  #root > div {
+    position: relative;
+    z-index: 999;
+  }
   .sbdocs-wrapper {
     min-height: 100%;
     box-sizing: border-box;
