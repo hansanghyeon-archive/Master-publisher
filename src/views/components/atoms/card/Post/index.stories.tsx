@@ -28,9 +28,8 @@ export const standard = () => {
   );
   const _date = date('Date', new Date());
   const footer = () => <NotionStyleListItem>Category</NotionStyleListItem>;
-  return (
-    <PostCard imgSrc={imgSrc} excerpt={excerpt} date={_date} footer={footer} />
-  );
+  const props = { imgSrc, excerpt, date: _date, footer };
+  return <PostCard {...props} />;
 };
 standard.story = {
   parameters: {

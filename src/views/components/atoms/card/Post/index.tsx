@@ -10,6 +10,7 @@ const ImgRow = styled.div<StyledProps>`
   background-image: url(${({ imgSrc }) => imgSrc});
   background-size: 100%;
   background-position: center;
+  background-repeat: no-repeat;
   transition: background-size 0.8s ease-in-out;
   will-change: background-size;
   position: relative;
@@ -46,7 +47,7 @@ const FooterRow = styled.div`
 `;
 const CardWrap = styled.div`
   font-size: 16px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.color.bg[0]};
   border-radius: 8px;
   box-shadow: 0 22px 24px -28px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -64,6 +65,7 @@ const RootWrap = styled.div`
   padding: 1rem;
   max-width: 320px;
 `;
+const ContentWrap = styled.div``;
 
 interface PostCardProps extends StyledProps {
   excerpt: string;
@@ -81,12 +83,14 @@ const PostCard = ({ imgSrc, excerpt, date, footer }: PostCardProps) => {
         <ImgRow imgSrc={imgSrc}>
           <ImgCentent />
         </ImgRow>
-        <ContentRow>
-          <Title>Title</Title>
-          <Content>{_excerpt()}</Content>
-          <Date>{moment(date).format('YYYY년 M월 D일')}</Date>
-        </ContentRow>
-        <FooterRow>{footer()}</FooterRow>
+        <ContentWrap>
+          <ContentRow>
+            <Title>Title</Title>
+            <Content>{_excerpt()}</Content>
+            <Date>{moment(date).format('YYYY년 M월 D일')}</Date>
+          </ContentRow>
+          <FooterRow>{footer()}</FooterRow>
+        </ContentWrap>
       </CardWrap>
     </RootWrap>
   );
