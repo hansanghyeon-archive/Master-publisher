@@ -4,6 +4,6 @@ export default [
   {
     tab: 'React',
     template: REACT_TEMPLATE,
-    lanauge: 'tsx',
+    language: 'tsx',
   },
 ];

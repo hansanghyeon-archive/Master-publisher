@@ -8,7 +8,7 @@ export default [
     // previews["React"][0]
     tab: 'React',
     template: REACT_TEMPLATE,
-    lanauge: 'tsx',
+    language: 'tsx',
     codesandbox: DEFAULT_REACT_CODESANDBOX(Dependencies),
   },
   {
