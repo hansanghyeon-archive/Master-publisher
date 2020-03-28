@@ -34,7 +34,7 @@ const CategoryLabel = styled.div`
 interface DittoProps {
   excerpt: string;
   date: number;
-  footer: any;
+  footer: () => React.ReactNode;
   imgSrc?: string;
   title: string;
   isGrid: boolean;
