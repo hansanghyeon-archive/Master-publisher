@@ -35,5 +35,10 @@ export const standard = () => {
   const title = text('Title', 'Ditto component');
   const isGrid = boolean('isGrid', false);
   const props = { imgSrc, excerpt, date: _date, footer, title, isGrid };
-  return <Ditto {...props} />;
+  return (
+    <>
+      <Ditto {...props} />
+      <Ditto {...props} imgSrc={undefined} />
+    </>
+  );
 };
