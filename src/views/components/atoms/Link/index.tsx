@@ -1,8 +1,5 @@
-import React from 'react';
+import styled from 'styled-components';
 
-interface props {
-  children: React.ReactNode;
-}
-const Link = ({ children }: props) => <div>{children}</div>;
+const Link = styled.div``;
 
 export default Link;
