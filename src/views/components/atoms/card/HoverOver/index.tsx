@@ -183,7 +183,7 @@ const HoverOverCard = ({ imgSrc, title, content }: Props) => {
     <CardRoot>
       <CardWrap
         ref={CardRef}
-        onMouseMove={e => handleMouseMove(e)}
+        onMouseMove={(e) => handleMouseMove(e)}
         onMouseEnter={() => handleMouseEnter()}
         onMouseLeave={() => handleMouseLeave()}
       >
