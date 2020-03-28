@@ -6,7 +6,7 @@ import { TimelineLite, Power1 } from 'gsap';
 import './index.style.scss';
 
 interface StyledProps {
-  imgSrc: string;
+  imgSrc?: string;
 }
 const DittoRoot = styled.div``;
 const Main = styled.div``;
@@ -35,7 +35,7 @@ interface DittoProps {
   excerpt: string;
   date: number;
   footer: any;
-  imgSrc: string;
+  imgSrc?: string;
   title: string;
   isGrid: boolean;
 }
@@ -67,7 +67,11 @@ const Ditto = ({
     }
   });
   return (
-    <DittoRoot className={`ditto ditto-root ditto-${isGrid ? 'grid' : 'list'}`}>
+    <DittoRoot
+      className={`ditto ditto-root ditto-${isGrid ? 'grid' : 'list'} ${
+        imgSrc ? '' : 'non-thumbnail'
+      }`}
+    >
       <Main className="_main">
         <Thumnail className="_thumnail" imgSrc={imgSrc} />
         <MainInner className="_mainInner">
