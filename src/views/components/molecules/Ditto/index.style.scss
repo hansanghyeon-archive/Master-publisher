@@ -29,6 +29,15 @@
       margin-left: 0 !important;
       margin-top: 0 !important;
       border-radius: 8px !important;
+      ._content {
+        max-width: calc(280px + 80px - 1rem);
+        transition: max-width 0.45s;
+      }
+    }
+  }
+  &-grid.non-thumbnail {
+    ._mainInner ._content {
+      max-width: 280px;
     }
   }
   // Ditto 컴포넌트의 root 내부의 2가지 구조
