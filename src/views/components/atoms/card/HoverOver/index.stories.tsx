@@ -64,7 +64,7 @@ const mockData = [
 ];
 
 export const standard = () => {
-  return mockData.map(data => {
+  return mockData.map((data) => {
     const props = KnobsGroup(data);
     return <HoverOverCard {...props} />;
   });
