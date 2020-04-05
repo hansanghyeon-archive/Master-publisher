@@ -235,16 +235,3 @@
     transform: translateY(20%) translateZ(0) scaleX(0);
   }
 }
-
-html {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: inherit;
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
-}
