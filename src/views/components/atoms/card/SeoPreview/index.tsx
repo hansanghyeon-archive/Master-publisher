@@ -48,11 +48,10 @@ const LottieWrap = styled(Col)`
     fill: ${({ theme }) => theme.color.bg[1]};
   }
 `;
-
-const SeoPreviewCard = ({ data, loading }: props) => {
+const Loaded = ({ data }: reqData) => {
   const { title, description, url, favicon, image } = data;
   const decodeUrl = decodeURI(url);
-  const Loaded = () => (
+  return (
     <>
       <Header className="_header">
         <Favicon className="_favicon">
@@ -69,24 +68,27 @@ const SeoPreviewCard = ({ data, loading }: props) => {
       </Body>
     </>
   );
-  const Loading = () => (
-    <>
-      <Header className="_header">
-        <Favicon className="_favicon">
-          <LoadingIcon />
-        </Favicon>
-        <div>Loading...</div>
-      </Header>
-      <Body className="_body">
-        <LottieWrap col className="_content">
-          <LoadingLottie />
-        </LottieWrap>
-      </Body>
-    </>
-  );
+};
+const Loading = () => (
+  <>
+    <Header className="_header">
+      <Favicon className="_favicon">
+        <LoadingIcon />
+      </Favicon>
+      <div>Loading...</div>
+    </Header>
+    <Body className="_body">
+      <LottieWrap col className="_content">
+        <LoadingLottie />
+      </LottieWrap>
+    </Body>
+  </>
+);
+
+const SeoPreviewCard = ({ data, loading, reqUrl }: props) => {
   return (
-    <RootWrap href={decodeUrl} className={`seoPreview ${loading && 'loading'}`}>
-      {!loading ? <Loaded /> : <Loading />}
+    <RootWrap href={reqUrl} className={`seoPreview ${loading && 'loading'}`}>
+      {!loading ? <Loaded data={data} /> : <Loading />}
     </RootWrap>
   );
 };
@@ -95,13 +97,16 @@ export default SeoPreviewCard;
 interface styleProps {
   bg?: string;
 }
-interface props {
+interface reqData {
   data?: {
     title: string;
     description: string;
-    url: string;
     image: string;
     favicon: string;
+    url: string;
   };
+}
+interface props extends reqData {
   loading: boolean;
+  reqUrl: string;
 }
