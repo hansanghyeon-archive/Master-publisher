@@ -29,6 +29,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@storybook/addon-knobs": "^5.3.17",
+    "axios": "^0.19.2",
     "framer-motion": "^1.8.4",
     "gsap": "^3.2.4",
     "lodash": "^4.17.15",
