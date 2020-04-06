@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'styled-bootstrap-grid';
 import './index.style.scss';
+import LoadingIcon from './LoadingIcon';
+import LoadingLottie from './LoadingLottie';
 
 const Header = styled.div`
   background-color: ${({ theme }) => theme.color.bg[0]};
@@ -32,12 +34,26 @@ const RootWrap = styled.a`
     }
   }
 `;
+const LottieWrap = styled(Col)`
+  svg.cpu-chip path[stroke='rgb(0,0,0)'] {
+    stroke: ${({ theme }) => theme.color.text[1]};
+  }
+  svg.cpu-chip path[stroke='rgb(241,241,241)'] {
+    stroke: ${({ theme }) => theme.color.bg[1]};
+  }
+  svg.cpu-chip path[fill='rgb(0,0,0)'] {
+    fill: ${({ theme }) => theme.color.text[1]};
+  }
+  svg.cpu-chip path[fill='rgb(241,241,241)'] {
+    fill: ${({ theme }) => theme.color.bg[1]};
+  }
+`;
 
-const SeoPreviewCard = ({ data }: props) => {
+const SeoPreviewCard = ({ data, loading }: props) => {
   const { title, description, url, favicon, image } = data;
   const decodeUrl = decodeURI(url);
-  return (
-    <RootWrap href={decodeUrl} className="seoPreview">
+  const Loaded = () => (
+    <>
       <Header className="_header">
         <Favicon className="_favicon">
           <img src={favicon} alt="" />
@@ -51,6 +67,26 @@ const SeoPreviewCard = ({ data }: props) => {
         </Content>
         {image && <ImageCol col={12} sm={4} bg={image} className="_thumnail" />}
       </Body>
+    </>
+  );
+  const Loading = () => (
+    <>
+      <Header className="_header">
+        <Favicon className="_favicon">
+          <LoadingIcon />
+        </Favicon>
+        <div>Loading...</div>
+      </Header>
+      <Body className="_body">
+        <LottieWrap col className="_content">
+          <LoadingLottie />
+        </LottieWrap>
+      </Body>
+    </>
+  );
+  return (
+    <RootWrap href={decodeUrl} className={`seoPreview ${loading && 'loading'}`}>
+      {!loading ? <Loaded /> : <Loading />}
     </RootWrap>
   );
 };
@@ -60,14 +96,12 @@ interface styleProps {
   bg?: string;
 }
 interface props {
-  data: {
+  data?: {
     title: string;
     description: string;
     url: string;
-    image?: string;
-    favicon?: string;
-    // optional
-    site_name?: string;
-    type?: string;
+    image: string;
+    favicon: string;
   };
+  loading: boolean;
 }

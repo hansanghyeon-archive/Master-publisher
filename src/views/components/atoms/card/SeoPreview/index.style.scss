@@ -5,6 +5,12 @@
   padding: 16px 0;
   position: relative;
 
+  &.loading {
+    ._header {
+      border-radius: 999px;
+      padding-right: 8px;
+    }
+  }
   ._header {
     display: flex;
     align-items: center;
@@ -24,7 +30,8 @@
       width: 16px;
       height: 16px;
       margin-right: 4px;
-      img {
+      img,
+      svg {
         width: 100%;
       }
     }
@@ -43,12 +50,22 @@
     ._content {
       overflow: hidden;
       font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: {
         top: 12px;
         bottom: 12px;
       }
+      @include respond-to('md') {
+        height: 120px;
+      }
       ._description {
         margin-bottom: 4px;
+        @include respond-to('md') {
+          max-height: 3.8rem;
+          overflow: hidden;
+        }
       }
       ._url {
         max-width: 100%;
