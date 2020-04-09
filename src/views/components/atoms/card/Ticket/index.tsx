@@ -201,7 +201,7 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
     }
     setBus(Math.floor(Math.random() * 3 + 1));
     setHuman(Math.floor(Math.random() * 2 + 1));
-  });
+  }, [isUsed]);
   return (
     <Root className={name}>
       <div className={`${name}-wrap`}>
