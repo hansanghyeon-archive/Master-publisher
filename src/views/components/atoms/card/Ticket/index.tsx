@@ -1,5 +1,5 @@
 import './index.style.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +8,10 @@ import { TimelineLite, Power1 } from 'gsap';
 import moment from 'moment';
 
 const Body = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[1]};
+  background-color: ${({ theme }) => theme.color.bg[0]};
+  &[data-used='true'] {
+    border-color: ${({ theme }) => theme.color.primary} !important;
+  }
   ${Row} {
     margin-left: 0;
     margin-right: 0;
@@ -27,14 +30,16 @@ const Detail = styled.div`
   }
 `;
 const Barcode = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[1]};
+  background-color: ${({ theme }) => theme.color.bg[0]};
 `;
 const CutLine = styled.div`
   &:after {
-    box-shadow: 16px 0 0 0 ${({ theme }) => theme.color.bg[1]};
+    box-shadow: 16px 0 0 0 ${({ theme }) => theme.color.bg[0]};
+    border-color: ${({ theme }) => theme.color.primary};
   }
   &:before {
-    box-shadow: -16px 0 0 0 ${({ theme }) => theme.color.bg[1]};
+    box-shadow: -16px 0 0 0 ${({ theme }) => theme.color.bg[0]};
+    border-color: ${({ theme }) => theme.color.primary};
   }
 `;
 
@@ -54,17 +59,15 @@ const StyledFa = styled(FontAwesomeIcon)`
   font-size: 20px;
 `;
 const Perforation = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[1]};
+  background-color: ${({ theme }) => theme.color.bg[0]};
   border-color: ${({ theme }) => theme.color.text[3]} !important;
 `;
-const Ticket = styled.div`
-  &:hover {
-    ${Perforation} {
-      /* border-color: ${({ theme }) => theme.color.primary} !important; */
-    }
+const Ticket = styled.div``;
+const Root = styled.div`
+  [data-used='true'] + .ticketCard-cutline.top .perforation {
+    border-bottom: 2px dashed ${({ theme }) => theme.color.primary} !important;
   }
 `;
-const Root = styled.div``;
 
 interface Region {
   name: string;
@@ -157,11 +160,13 @@ const TDetail = ({ name, detail }: TDetaileType) => {
 };
 
 const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
+  const [bus, setBus] = useState(Math.floor(Math.random() * 4 + 1));
   const { start, end, detail } = data;
   const name = 'ticketCard';
   useEffect(() => {
     const tl = new TimelineLite();
     const target = `.${name} .ticket`;
+    const body = `.${name}-body`;
     if (isUsed) {
       tl.to([target], 0.45, {
         ease: Power1.easeOut,
@@ -175,15 +180,25 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
           ease: Power1.easeInOut,
           opacity: '0',
         })
-        .to([target], 0.4, {
-          ease: Power1.easeIn,
-          height: 0,
+        .to([body], 0.2, {
+          ease: Power1.easeOut,
+          boxShadow: '0 0 0 0 rgba(0,0,0,0)',
+          borderTopWidth: '2px',
+          borderRightWidth: '2px',
+          borderLeftWidth: '2px',
+          attr: {
+            'data-used': 'true',
+          },
         });
     } else {
-      tl.to([target], 0.25, {
-        style: null,
+      tl.to([target, body], 0, {
+        attr: {
+          style: null,
+          'data-used': null,
+        },
       });
     }
+    setBus(Math.floor(Math.random() * 4 + 1));
   });
   return (
     <Root className={name}>
@@ -193,6 +208,26 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
             <THeader name={name} start={start} end={end} />
             <Divider className={`${name}-divider`} />
             <TDetail name={name} detail={detail} />
+            <div className="bus">
+              <div className="bus-obj">
+                <img
+                  src={`https://wp.hapas.io/wp-content/uploads/storybook/card/ticket/bus${bus}.svg`}
+                  alt=""
+                />
+              </div>
+              <div className="bus-statsion">
+                <img
+                  className="human"
+                  src="https://wp.hapas.io/wp-content/uploads/storybook/card/ticket/human.svg"
+                  alt=""
+                />
+                <img
+                  className="sign"
+                  src="https://wp.hapas.io/wp-content/uploads/storybook/card/ticket/bus-stop.svg"
+                  alt=""
+                />
+              </div>
+            </div>
           </Body>
           <CutLine className={`${name}-cutline top`}>
             <Perforation className="perforation" />
@@ -203,7 +238,10 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
             <Perforation className="perforation" />
           </CutLine>
           <Barcode className={`${name}-barcode`}>
-            <img src="/barcode.png" alt="" />
+            <img
+              src="https://wp.hapas.io/wp-content/uploads/storybook/card/ticket/barcode.png"
+              alt=""
+            />
           </Barcode>
         </Ticket>
       </div>
