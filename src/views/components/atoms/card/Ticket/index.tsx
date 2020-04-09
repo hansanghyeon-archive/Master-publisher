@@ -167,7 +167,7 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
         ease: Power1.easeOut,
         transform: 'rotate(-10deg)',
       })
-        .to([target], 1, {
+        .to([target], 0.45, {
           ease: Power1.easeIn,
           transform: 'translateY(100px) rotate(0deg)',
         })

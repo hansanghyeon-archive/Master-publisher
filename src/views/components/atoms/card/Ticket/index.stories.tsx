@@ -63,3 +63,6 @@ const MockContext = () => {
 };
 
 export const standard = () => <MockContext />;
+standard.story = {
+  name: 'v1.0.0',
+};
