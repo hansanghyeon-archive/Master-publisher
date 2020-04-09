@@ -160,7 +160,8 @@ const TDetail = ({ name, detail }: TDetaileType) => {
 };
 
 const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
-  const [bus, setBus] = useState(Math.floor(Math.random() * 4 + 1));
+  const [bus, setBus] = useState(Math.floor(Math.random() * 3 + 1));
+  const [human, setHuman] = useState(Math.floor(Math.random() * 2 + 1));
   const { start, end, detail } = data;
   const name = 'ticketCard';
   useEffect(() => {
@@ -198,7 +199,8 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
         },
       });
     }
-    setBus(Math.floor(Math.random() * 4 + 1));
+    setBus(Math.floor(Math.random() * 3 + 1));
+    setHuman(Math.floor(Math.random() * 2 + 1));
   });
   return (
     <Root className={name}>
@@ -218,7 +220,7 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
               <div className="bus-statsion">
                 <img
                   className="human"
-                  src="https://wp.hapas.io/wp-content/uploads/storybook/card/ticket/human.svg"
+                  src={`https://wp.hapas.io/wp-content/uploads/storybook/card/ticket/human${human}.svg`}
                   alt=""
                 />
                 <img
