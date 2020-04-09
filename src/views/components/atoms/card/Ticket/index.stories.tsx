@@ -1,29 +1,18 @@
 import React, { useState } from 'react';
 import { withKnobs, object } from '@storybook/addon-knobs';
-import { createGlobalStyle } from 'styled-components';
-// import { withPreview } from 'storybook-addon-preview';
+import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@atom/wrap/Center';
 import TicketCard from '.';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    /* background-color: #21D4FD;
-    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%); */
-  }
-`;
+import previews from './previews';
 
 export default {
   title: '01. atoms/Card/Ticket',
   component: TicketCard,
   decorators: [
     withKnobs,
-    (storyFn: any) => (
-      <>
-        <GlobalStyle />
-        <CenterWrap>{storyFn()}</CenterWrap>
-      </>
-    ),
+    withPreview,
+    (storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>,
   ],
 };
 
@@ -65,4 +54,7 @@ const MockContext = () => {
 export const standard = () => <MockContext />;
 standard.story = {
   name: 'v1.0.0',
+  parameters: {
+    preview: previews,
+  },
 };
