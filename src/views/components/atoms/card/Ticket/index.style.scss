@@ -68,6 +68,7 @@
             top: 2px;
             right: 2px;
             left: 2px;
+            bottom: 0;
             style: solid;
           }
         }
@@ -126,6 +127,7 @@
       width: 32px;
       height: 16px;
       top: 0;
+      box-sizing: border-box;
     }
     &.top {
       &:after {
