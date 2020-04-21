@@ -6,9 +6,10 @@ import { addons } from '@storybook/addons';
 import { themes } from '@storybook/theming';
 import '@storybook/addon-docs/register';
 import 'storybook-addon-preview/register';
-import "prism-themes/themes/prism-dracula.css";
+import 'prism-themes/themes/prism-dracula.css';
 import './style.css';
+import yourTheme from './yourTheme';
 
 addons.setConfig({
-  theme: themes.dark,
+  theme: yourTheme,
 });
