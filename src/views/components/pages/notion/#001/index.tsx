@@ -33,10 +33,10 @@ export default ({ data }: any) => {
   engine.setModel(model);
   useEffect(() => {
     const TitleNode = new DefaultNodeModel({
-      name: 'Tranditional Page Lifecycle',
+      name: data.title,
       color: 'rgb(255, 255, 255)',
     });
-    TitleNode.setPosition(124, 24);
+    TitleNode.setPosition(24, 24);
     // node 1
     const clientNode = new DefaultNodeModel({
       name: 'Client',
@@ -72,7 +72,7 @@ export default ({ data }: any) => {
       name: 'Server',
       color: '#270E40',
     });
-    serverNode.setPosition(336, 80);
+    serverNode.setPosition(200, 80);
     serverNode.addInPort('');
     const serverNodePort1 = serverNode.addPort(
       new AdvancedPortModel(true, 'port1'),
