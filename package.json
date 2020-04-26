@@ -29,6 +29,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "@mrblenny/react-flow-chart": "0.0.11",
     "@projectstorm/react-canvas-core": "^6.0.2",
     "@projectstorm/react-diagrams": "^6.0.2",
     "@projectstorm/react-diagrams-core": "^6.0.2",
