@@ -1,10 +1,18 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
+import { createGlobalStyle } from 'styled-components';
+
+const ThisStyle = createGlobalStyle`
+  .svg-container {
+    background-color: #ffc988
+  }
+`;
 
 const D3_001 = () => {
   const Root = useRef<HTMLDivElement>(null);
   const Svg = useRef<SVGSVGElement>(null);
   const Svg2 = useRef<SVGSVGElement>(null);
+  const Svg3 = useRef<SVGSVGElement>(null);
   useEffect(() => {
     // Train: Creating a Simple Bar Chart
     (() => {
@@ -98,14 +106,56 @@ const D3_001 = () => {
         .attr('transform', `translate(50, ${xAxisTranslate})`)
         .call(xAxis);
     })();
+    // Train: Creating SVG Elements
+    (() => {
+      const svgWidth = 500;
+      const svgHeight = 500;
+
+      const svg = d3
+        .select(Svg3.current)
+        .attr('width', svgWidth)
+        .attr('height', svgHeight)
+        .attr('class', 'svg-container');
+
+      // const line =
+      svg
+        .append('line')
+        .attr('x1', 100)
+        .attr('x2', 500)
+        .attr('y1', 50)
+        .attr('y2', 50)
+        .attr('stroke', 'red')
+        .attr('stroke-width', 5);
+
+      // const rect =
+      svg
+        .append('rect')
+        .attr('x', 100)
+        .attr('y', 100)
+        .attr('width', 200)
+        .attr('height', 100)
+        .attr('fill', '#9B95FF');
+
+      // const circle =
+      svg
+        .append('circle')
+        .attr('cx', 200)
+        .attr('cy', 300)
+        .attr('r', 80)
+        .attr('fill', '#9ce8d5');
+    })();
   }, []);
+
   return (
     <>
+      <ThisStyle />
       <div ref={Root} />
       <br />
       <svg ref={Svg} />
       <br />
       <svg ref={Svg2} />
+      <br />
+      <svg ref={Svg3} />
     </>
   );
 };
