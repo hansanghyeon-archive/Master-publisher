@@ -43,6 +43,18 @@ const D3_001 = () => {
           const translate = [barWidth * i, 0];
           return `translate(${translate})`;
         });
+
+      // Train: Creating Labels
+      // const text =
+      svg
+        .selectAll('text')
+        .data(MockDataset)
+        .enter()
+        .append('text')
+        .text((d) => d)
+        .attr('y', (d) => svgHeight - d - 2)
+        .attr('x', (d, i) => barWidth * i)
+        .attr('fill', '#A64C38');
     })();
   }, []);
   return (
