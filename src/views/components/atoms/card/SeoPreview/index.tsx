@@ -57,7 +57,7 @@ const Loaded = ({ data }: reqData) => {
         <Favicon className="_favicon">
           <img src={favicon} alt="" />
         </Favicon>
-        <div>{title}</div>
+        <div className="_title">{title}</div>
       </Header>
       <Body className="_body">
         <Content col className="_content">
@@ -98,7 +98,7 @@ interface styleProps {
   bg?: string;
 }
 interface reqData {
-  data?: {
+  data: {
     title: string;
     description: string;
     image: string;
