@@ -1,6 +1,8 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import CpuChip from '@view/animations/cpu-chip.json';
+import CpuChip from './cpu-chip.json';
+// styled-components
+import { LottieWrap } from './index.style';
 
 const lottieOptions = {
   animationData: CpuChip,
@@ -11,6 +13,10 @@ const lottieOptions = {
   },
 };
 
-const LoadingLottie = () => <Lottie options={lottieOptions} />;
+const LoadingLottie = () => (
+  <LottieWrap>
+    <Lottie options={lottieOptions} />
+  </LottieWrap>
+);
 
 export default LoadingLottie;
