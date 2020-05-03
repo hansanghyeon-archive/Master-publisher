@@ -13,5 +13,52 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "m5p8.card/seo-preview@1.0.2": {
+        "files": [
+            {
+                "relativePath": "src/models/GridSystem.ts",
+                "test": false,
+                "name": "GridSystem.ts"
+            },
+            {
+                "relativePath": "src/views/components/atoms/card/SeoPreview/LoadingIcon/index.tsx",
+                "test": false,
+                "name": "index.tsx"
+            },
+            {
+                "relativePath": "src/views/components/atoms/card/SeoPreview/LoadingLottie/cpu-chip.json",
+                "test": false,
+                "name": "cpu-chip.json"
+            },
+            {
+                "relativePath": "src/views/components/atoms/card/SeoPreview/LoadingLottie/index.style.tsx",
+                "test": false,
+                "name": "index.style.tsx"
+            },
+            {
+                "relativePath": "src/views/components/atoms/card/SeoPreview/LoadingLottie/index.tsx",
+                "test": false,
+                "name": "index.tsx"
+            },
+            {
+                "relativePath": "src/views/components/atoms/card/SeoPreview/index.style.tsx",
+                "test": false,
+                "name": "index.style.tsx"
+            },
+            {
+                "relativePath": "src/views/components/atoms/card/SeoPreview/index.tsx",
+                "test": false,
+                "name": "index.tsx"
+            },
+            {
+                "relativePath": "src/views/styles/gridSystem.ts",
+                "test": false,
+                "name": "gridSystem.ts"
+            }
+        ],
+        "mainFile": "src/views/components/atoms/card/SeoPreview/index.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "version": "14.7.6"
 }
