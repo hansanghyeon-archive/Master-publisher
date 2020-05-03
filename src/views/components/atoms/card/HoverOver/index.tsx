@@ -116,7 +116,7 @@ interface State {
   height: number;
   mouseX: number;
   mouseY: number;
-  mouseLeaveDelay: ReturnType<typeof setTimeout>;
+  mouseLeaveDelay: any;
   cardStyleReset: boolean;
 }
 interface imgSrc {
@@ -157,7 +157,7 @@ const HoverOverCard = ({ imgSrc, title, content }: Props) => {
 
   const handleMouseLeave = () => {
     setMouseLeaveDelay(
-      setTimeout(() => {
+      window.setTimeout(() => {
         setCardStyleReset(true);
       }, 1000),
     );
