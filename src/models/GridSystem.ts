@@ -1,4 +1,4 @@
-interface breakpoint {
+export interface breakpoint {
   xl: number;
   lg: number;
   md: number;

@@ -1,14 +1,22 @@
-import GridSystem from '@model/GridSystem';
+import { breakpoint } from '@model/GridSystem';
 
-const gridSystem: GridSystem = {
-  breakpoints: {
-    // defaults below
-    xl: 1200,
-    lg: 992,
-    md: 768,
-    sm: 576,
-    xs: 575,
-  },
+export const breakpoints: breakpoint = {
+  xl: 1200,
+  lg: 992,
+  md: 768,
+  sm: 576,
+  xs: 575,
+};
+export const respondTo = {
+  xl: `@media (min-width: ${breakpoints.xl + 1}px)`,
+  lg: `@media (min-width: ${breakpoints.lg + 1}px)`,
+  md: `@media (min-width: ${breakpoints.md + 1}px)`,
+  sm: `@media (min-width: ${breakpoints.sm + 1}px)`,
+  xs: `@media (min-width: ${breakpoints.xs + 1}px)`,
+};
+
+const gridSystem = {
+  breakpoints,
   row: {
     padding: 15, // default 15
   },
