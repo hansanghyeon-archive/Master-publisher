@@ -1,0 +1,38 @@
+{
+  "env": {
+    "compiler": {
+      "bit.envs/compilers/react-typescript@3.1.52": {
+        "rawConfig": {
+          "tsconfig": {
+            "compilerOptions": {
+              "types": ["node"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "componentsDefaultDirectory": "components/{name}",
+  "packageManager": "npm",
+  "resolveModules": {
+    "aliases": {
+      "@src": "src",
+      "@view": "src/views",
+      "@atom": "src/views/components/atoms",
+      "@molecule": "src/views/components/molecules",
+      "@organism": "src/views/components/organisms",
+      "@template": "src/views/components/templates",
+      "@animation": "src/views/components/animations",
+      "@style": "src/views/styles",
+      "@utile": "src/utilites",
+      "@model": "src/model"
+    }
+  },
+  "overrides": {
+    "*": {
+      "devDependencies": {
+        "@types/node": "^12.12.29"
+      }
+    }
+  }
+}
