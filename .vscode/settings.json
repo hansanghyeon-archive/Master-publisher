@@ -1,11 +1,5 @@
 {
-  "files.exclude": {
-    ".github/": true
-  },
   "editor.formatOnSave": true,
-  "workspace.exclude": {
-    ".github/": true
-  },
   "workbench.colorCustomizations": {
     "statusBar.background": "#ec407a",
     "statusBarItem.hoverBackground": "#ff8bb2",
