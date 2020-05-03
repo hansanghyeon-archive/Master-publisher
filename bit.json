@@ -25,7 +25,7 @@
       "@animation": "src/views/components/animations",
       "@style": "src/views/styles",
       "@utile": "src/utilites",
-      "@model": "src/model"
+      "@model": "src/models"
     }
   },
   "overrides": {
