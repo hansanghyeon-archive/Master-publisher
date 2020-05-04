@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const IconSvg = styled.svg`
-  fill: ${({ theme }) => theme.color?.text[1] && '#333'};
+  fill: ${({ theme }) => theme.color.text[1]};
 `;
 
 const LoadingIcon = () => (

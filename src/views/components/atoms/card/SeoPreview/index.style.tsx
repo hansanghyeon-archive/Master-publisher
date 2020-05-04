@@ -4,7 +4,8 @@ import { Row, Col } from 'styled-bootstrap-grid';
 import { respondTo } from '@style/gridSystem';
 
 export const Header = styled.div`
-  background-color: ${({ theme }) => theme.color?.bg[0] && '#fff'};
+  background-color: ${({ theme }) => theme.color.bg[0]};
+  color: ${({ theme }) => theme.color.text[0]};
 
   display: flex;
   align-items: center;
@@ -39,6 +40,8 @@ export const Favicon = styled.div`
 `;
 
 export const Title = styled.div`
+  color: ${({ theme }) => theme.color.text[0]};
+
   white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 100%;
@@ -46,8 +49,8 @@ export const Title = styled.div`
 `;
 
 export const Body = styled(Row)`
-  background-color: ${({ theme }) => theme.color?.bg[1] && '#f6f8ff'};
-  color: ${({ theme }) => theme.color?.text[2] && '#868E96'};
+  background-color: ${({ theme }) => theme.color.bg[1]};
+  color: ${({ theme }) => theme.color.text[2]};
 
   font-size: 14px;
   border-radius: 4px;
@@ -102,7 +105,7 @@ export const Thumnail = styled.div<styleProps>`
   background-position: center;
   width: 100%;
   height: 100%;
-  ${respondTo.md} {
+  ${respondTo.sm} {
     display: block;
   }
 `;
@@ -121,12 +124,12 @@ const SeoPreview = styled.a`
   }
   &:hover {
     ${Header} {
-      background-color: ${({ theme }) => theme.color?.primary && '#0f4c81'};
-      color: ${({ theme }) => theme.color?.grayscales.light[0] && '#ffffff'};
+      background-color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.color.grayscales.light[0]};
     }
     ${Body} {
-      color: ${({ theme }) => theme.color?.text[1] && '#4A4F57'};
-      border: 1px solid ${({ theme }) => theme.color?.text[2] && '#868E96'};
+      color: ${({ theme }) => theme.color.text[1]};
+      border: 1px solid ${({ theme }) => theme.color.text[2]};
     }
   }
 `;

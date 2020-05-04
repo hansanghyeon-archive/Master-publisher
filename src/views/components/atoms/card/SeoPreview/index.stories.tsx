@@ -3,7 +3,8 @@ import { withKnobs, object, boolean } from '@storybook/addon-knobs';
 // import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@atom/wrap/Center';
-import SeoPreviewCard from '@bit/m5p8.card.seo-preview';
+// import SeoPreviewCard from '@bit/m5p8.card.seo-preview';
+import SeoPreviewCard, { ThemeList } from '.';
 
 export default {
   title: '01. atoms/Card/SeoPreview',
@@ -15,7 +16,7 @@ export default {
 };
 
 export const standard = () => {
-  const _data = object('Data', {
+  const resData = object('Data', {
     site_name: 'Medium',
     type: 'article',
     title: 'Puppeteer 간단 정리하기',
@@ -29,10 +30,13 @@ export const standard = () => {
       'https://fs.nas.hapas.io/meta-crawler/https%253A%252F%252Fmedium.com%252F@pks2974%252Fpuppeteer-%25EA%25B0%2584%25EB%258B%25A8-%25EC%25A0%2595%25EB%25A6%25AC%25ED%2595%2598%25EA%25B8%25B0-a252bffbb2a8/favicon.ico',
   });
   const props = {
-    data: _data,
-    loading: boolean('isLoading', false),
-    reqUrl:
-      'https://medium.com/@pks2974/puppeteer-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-a252bffbb2a8',
+    data: {
+      resData: resData,
+      loading: boolean('isLoading', false),
+      reqUrl:
+        'https://medium.com/@pks2974/puppeteer-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-a252bffbb2a8',
+    },
+    theme: ThemeList.dark,
   };
   return <SeoPreviewCard {...props} />;
 };
