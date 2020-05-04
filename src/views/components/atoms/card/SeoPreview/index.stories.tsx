@@ -3,7 +3,7 @@ import { withKnobs, object, boolean } from '@storybook/addon-knobs';
 // import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@atom/wrap/Center';
-import SeoPreviewCard from '.';
+import SeoPreviewCard from '@bit/m5p8.card.seo-preview';
 
 export default {
   title: '01. atoms/Card/SeoPreview',
