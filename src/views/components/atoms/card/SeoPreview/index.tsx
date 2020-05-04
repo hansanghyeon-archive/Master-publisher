@@ -61,9 +61,6 @@ const SeoPreviewCard = ({ data, loading, reqUrl }: props) => {
 };
 
 export default SeoPreviewCard;
-interface styleProps {
-  bg?: string;
-}
 interface reqData {
   data: {
     title: string;
