@@ -1,6 +1,4 @@
-import { breakpoint } from '@model/GridSystem';
-
-export const breakpoints: breakpoint = {
+export const breakpoints = {
   xl: 1200,
   lg: 992,
   md: 768,
