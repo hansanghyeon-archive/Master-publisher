@@ -4,11 +4,14 @@ import LoadingIcon from './LoadingIcon';
 import LoadingLottie from './LoadingLottie';
 import SeoPreview, {
   Header,
+  LoadingHeader,
   Favicon,
   Body,
   Url,
   Thumnail,
   Content,
+  Title,
+  Description,
 } from './index.style';
 
 const Loaded = ({ data }: reqData) => {
@@ -16,16 +19,16 @@ const Loaded = ({ data }: reqData) => {
   const decodeUrl = decodeURI(url);
   return (
     <>
-      <Header className="_header">
-        <Favicon className="_favicon">
+      <Header>
+        <Favicon>
           <img src={favicon} alt="" />
         </Favicon>
-        <div className="_title">{title}</div>
+        <Title>{title}</Title>
       </Header>
-      <Body className="_body">
-        <Content col className="_content">
-          <div className="_description">{description}</div>
-          <Url className="_url">{decodeUrl}</Url>
+      <Body>
+        <Content col>
+          <Description>{description}</Description>
+          <Url>{decodeUrl}</Url>
         </Content>
         {image && (
           <Col col={12} sm={4}>
@@ -38,14 +41,14 @@ const Loaded = ({ data }: reqData) => {
 };
 const Loading = () => (
   <>
-    <Header className="_header">
-      <Favicon className="_favicon">
+    <LoadingHeader>
+      <Favicon>
         <LoadingIcon />
       </Favicon>
       <div>Loading...</div>
-    </Header>
-    <Body className="_body">
-      <Content col className="_content">
+    </LoadingHeader>
+    <Body>
+      <Content col>
         <LoadingLottie />
       </Content>
     </Body>
@@ -54,7 +57,7 @@ const Loading = () => (
 
 const SeoPreviewCard = ({ data, loading, reqUrl }: props) => {
   return (
-    <SeoPreview href={reqUrl} className={`seoPreview ${loading && 'loading'}`}>
+    <SeoPreview href={reqUrl}>
       {!loading ? <Loaded data={data} /> : <Loading />}
     </SeoPreview>
   );
