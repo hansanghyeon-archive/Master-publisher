@@ -50,6 +50,18 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "m5p8.style-system/4log-theme@1.0.0": {
+        "files": [
+            {
+                "relativePath": "src/views/styles/themes/4log.ts",
+                "test": false,
+                "name": "4log.ts"
+            }
+        ],
+        "mainFile": "src/views/styles/themes/4log.ts",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "m5p8.style-system/grid@1.0.0": {
         "files": [
             {

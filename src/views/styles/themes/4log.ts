@@ -1,6 +1,20 @@
-import StyleSystem, { DarkStyleSystem } from '@model/StyleSystem';
+type Grayscales = {
+  dark: string[];
+  light: string[];
+};
 
-const DefaultTheme: StyleSystem = {
+type Colors = {
+  primary: string;
+  bg: string[];
+  text: string[];
+  grayscales: Grayscales;
+};
+
+export interface styleTheme {
+  color: Colors;
+}
+
+const DefaultTheme: styleTheme = {
   color: {
     primary: '#0f4c81',
     bg: ['#fff', '#f6f8ff'],
@@ -12,7 +26,7 @@ const DefaultTheme: StyleSystem = {
   },
 };
 
-export const DarkTheme: DarkStyleSystem = {
+export const DarkTheme: styleTheme = {
   color: {
     ...DefaultTheme.color,
     primary: '#fff46a',
