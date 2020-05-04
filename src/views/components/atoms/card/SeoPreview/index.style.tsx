@@ -4,7 +4,7 @@ import { Row, Col } from 'styled-bootstrap-grid';
 import { respondTo } from '@style/gridSystem';
 
 export const Header = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[0]};
+  background-color: ${({ theme }) => theme.color?.bg[0] && '#fff'};
 
   display: flex;
   align-items: center;
@@ -46,8 +46,8 @@ export const Title = styled.div`
 `;
 
 export const Body = styled(Row)`
-  background-color: ${({ theme }) => theme.color.bg[1]};
-  color: ${({ theme }) => theme.color.text[2]};
+  background-color: ${({ theme }) => theme.color?.bg[1] && '#f6f8ff'};
+  color: ${({ theme }) => theme.color?.text[2] && '#868E96'};
 
   font-size: 14px;
   border-radius: 4px;
@@ -69,6 +69,7 @@ export const Content = styled(Col)`
   justify-content: space-between;
   padding-top: 12px;
   padding-bottom: 12px;
+  max-height: 120px;
   ${respondTo.md} {
     height: 120px;
   }
@@ -120,12 +121,12 @@ const SeoPreview = styled.a`
   }
   &:hover {
     ${Header} {
-      background-color: ${({ theme }) => theme.color.primary};
-      color: ${({ theme }) => theme.color.grayscales.light[0]};
+      background-color: ${({ theme }) => theme.color?.primary && '#0f4c81'};
+      color: ${({ theme }) => theme.color?.grayscales.light[0] && '#ffffff'};
     }
     ${Body} {
-      color: ${({ theme }) => theme.color.text[1]};
-      border: 1px solid ${({ theme }) => theme.color.text[2]};
+      color: ${({ theme }) => theme.color?.text[1] && '#4A4F57'};
+      border: 1px solid ${({ theme }) => theme.color?.text[2] && '#868E96'};
     }
   }
 `;
