@@ -1,8 +1,7 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 import { Col } from 'styled-bootstrap-grid';
 
-import DefaultTheme, { DarkTheme, styleTheme } from '@style/themes/4log';
+import ThemeProvider, { ThemeList } from '@style/themes';
 import LoadingIcon from './LoadingIcon';
 import LoadingLottie from './LoadingLottie';
 import SeoPreview, {
@@ -69,10 +68,6 @@ const Loading = () => (
   </>
 );
 
-export enum ThemeList {
-  light = 'light',
-  dark = 'dark',
-}
 interface props {
   data: {
     resData: resData;
@@ -84,19 +79,8 @@ interface props {
 
 const SeoPreviewCard = ({ data, theme }: props) => {
   const { loading, reqUrl, resData } = data;
-  const choiceTheme = (): styleTheme => {
-    if (!theme) return DefaultTheme;
-    switch (ThemeList[theme]) {
-      case ThemeList.light:
-        return DefaultTheme;
-      case ThemeList.dark:
-        return DarkTheme;
-      default:
-        return DefaultTheme;
-    }
-  };
   return (
-    <ThemeProvider theme={choiceTheme}>
+    <ThemeProvider theme={theme}>
       <SeoPreview href={reqUrl}>
         {!loading ? <Loaded data={resData} /> : <Loading />}
       </SeoPreview>

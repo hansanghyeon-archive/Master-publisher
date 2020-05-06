@@ -4,7 +4,8 @@ import { withKnobs, object, boolean } from '@storybook/addon-knobs';
 // components
 import CenterWrap from '@atom/wrap/Center';
 // import SeoPreviewCard from '@bit/m5p8.card.seo-preview';
-import SeoPreviewCard, { ThemeList } from '.';
+import { ThemeList } from '@style/themes';
+import SeoPreviewCard from '.';
 
 export default {
   title: '01. atoms/Card/SeoPreview',
