@@ -3,7 +3,7 @@ import { configure, addParameters, addDecorator } from '@storybook/react';
 import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { withThemesProvider } from 'themeprovider-storybook';
-import themes from '../src/views/styles/themes';
+import themes from '../src/views/styles/themes/index.stories';
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
