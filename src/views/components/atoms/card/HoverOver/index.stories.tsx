@@ -1,10 +1,10 @@
 import React from 'react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
 import { withPreview } from 'storybook-addon-preview';
 import styled from 'styled-components';
 
 import CenterWrap from '@atom/wrap/Center';
-import HoverOverCard, { Props } from '.';
+import HoverOverCard from '.';
 import previews from './previews/index';
 
 const FlexBox = styled.div`
@@ -25,14 +25,20 @@ export default {
   ],
 };
 
-interface KProps extends Props {
-  groupName?: string;
-}
-const KnobsGroup = ({ imgSrc, title, content, groupName }: KProps) => {
+const KnobsGroup = ({
+  imgSrc,
+  title,
+  content,
+  groupName,
+  interactionValue,
+}: any) => {
   return {
-    imgSrc: text('Image src', imgSrc, groupName),
-    title: text('Title', title, groupName),
-    content: text('Contnet', content, groupName),
+    data: {
+      imgSrc: text('Image src', imgSrc, groupName),
+      title: text('Title', title, groupName),
+      content: text('Contnet', content, groupName),
+      interactionValue: number('interactionValue', interactionValue, groupName),
+    },
   };
 };
 
@@ -41,24 +47,28 @@ const mockData = [
     imgSrc: 'https://source.unsplash.com/collection/9641990',
     title: '봄',
     content: '[unsplash] 봄 collections',
+    interactionValue: 15,
     groupName: 'Card1',
   },
   {
     imgSrc: 'https://source.unsplash.com/collection/9683070',
     title: '여름',
     content: '[unsplash] 여름 collections',
+    interactionValue: 15,
     groupName: 'Card2',
   },
   {
     imgSrc: 'https://source.unsplash.com/collection/9683123',
     title: '가을',
     content: '[unsplash] 가을 collections',
+    interactionValue: 15,
     groupName: 'Card3',
   },
   {
     imgSrc: 'https://source.unsplash.com/collection/9683129',
     title: '겨울',
     content: '[unsplash] 겨울 collections',
+    interactionValue: 15,
     groupName: 'Card4',
   },
 ];
