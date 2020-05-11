@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrap = styled.div`
+  color: ${({ theme }) => theme.color.text[0]};
   display: grid;
   grid-template-columns: 16px auto;
   column-gap: 8px;
