@@ -1,26 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Wrap = styled.div`
-  display: grid;
-  grid-template-columns: 16px auto;
-  column-gap: 8px;
-  > div {
-    align-self: center;
-  }
-`;
-const ImgWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 3px;
-  text-align: center;
-  img {
-    width: 100%;
-    margin-bottom: 0;
-  }
-`;
+import { Wrap, ImgWrap } from './index.style';
 
 interface Props {
   imgSrc?: string;
