@@ -3,6 +3,8 @@ import { transparentize } from 'polished';
 import { respondTo } from '@style/gridSystem';
 
 export const DittoRoot = styled.div`
+  color: ${({ theme }) => theme.color.text[0]};
+
   padding: 1rem;
   min-height: 48px;
   position: relative;
