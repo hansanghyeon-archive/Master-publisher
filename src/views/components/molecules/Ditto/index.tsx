@@ -15,21 +15,17 @@ import {
 } from './index.style';
 
 interface DittoProps {
-  excerpt: string;
-  date: number;
-  footer: () => React.ReactNode;
-  imgSrc?: string;
-  title: string;
-  isGrid: boolean;
+  data: {
+    excerpt: string;
+    date: number;
+    footer: () => React.ReactNode;
+    imgSrc?: string;
+    title: string;
+    isGrid: boolean;
+  };
 }
-const Ditto = ({
-  imgSrc,
-  excerpt,
-  date,
-  footer,
-  title,
-  isGrid,
-}: DittoProps) => {
+const Ditto = ({ data }: DittoProps) => {
+  const { imgSrc, excerpt, date, footer, title, isGrid } = data;
   const _excerpt = () => {
     if (excerpt.length < 118) return excerpt;
     return `${excerpt.substring(0, 110)}...`;

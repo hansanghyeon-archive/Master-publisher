@@ -34,11 +34,16 @@ export const standard = () => {
   };
   const title = text('Title', 'Ditto component');
   const isGrid = boolean('isGrid', false);
-  const props = { imgSrc, excerpt, date: _date, footer, title, isGrid };
+  const props = {
+    data: { imgSrc, excerpt, date: _date, footer, title, isGrid },
+  };
+  const props2 = {
+    data: { imgSrc: undefined, excerpt, date: _date, footer, title, isGrid },
+  };
   return (
     <>
       <Ditto {...props} />
-      <Ditto {...props} imgSrc={undefined} />
+      <Ditto {...props2} />
     </>
   );
 };
