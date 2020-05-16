@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable prettier/prettier */
 import styled from 'styled-components';
 import { respondTo } from '@style/gridSystem';
 

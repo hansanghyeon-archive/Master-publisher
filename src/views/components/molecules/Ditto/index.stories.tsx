@@ -3,7 +3,6 @@ import { withKnobs, text, date, boolean } from '@storybook/addon-knobs';
 // import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@atom/wrap/Center';
-import NotionStyleListItem from '@atom/listItem/NotionStyle';
 import Ditto from '.';
 
 export default {
@@ -25,20 +24,25 @@ export const standard = () => {
     'One of the Pokémon in Pokemon. It looks like a purple slime and has the ability to transform into another Pokemon.',
   );
   const _date = date('Date', new Date());
-  const footer = () => {
-    const icon = text(
+  const footer = {
+    icon: text(
       'Category Icon',
       'https://wp.hapas.io/wp-content/uploads/pokemon/038-gaming.svg',
-    );
-    return <NotionStyleListItem imgSrc={icon}>Pokemon</NotionStyleListItem>;
+    ),
+    title: text('Category title', 'Pokemon'),
   };
   const title = text('Title', 'Ditto component');
   const isGrid = boolean('isGrid', false);
-  const props = { imgSrc, excerpt, date: _date, footer, title, isGrid };
+  const props = {
+    data: { imgSrc, excerpt, date: _date, footer, title, isGrid },
+  };
+  const props2 = {
+    data: { imgSrc: undefined, excerpt, date: _date, footer, title, isGrid },
+  };
   return (
     <>
       <Ditto {...props} />
-      <Ditto {...props} imgSrc={undefined} />
+      <Ditto {...props2} />
     </>
   );
 };
