@@ -58,6 +58,12 @@ module.exports = {
     'class-methods-use-this': 'off',
     'react/jsx-props-no-spreading': [0],
     'no-underscore-dangle': [0],
+    'import/prefer-default-export': [
+      'off',
+      {
+        extensions: ['style.tsx'],
+      },
+    ],
   },
   settings: {
     'import/resolver': {
