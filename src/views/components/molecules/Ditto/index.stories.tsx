@@ -17,7 +17,7 @@ export default {
 export const standard = () => {
   const imgSrc = text(
     'Image Src',
-    'https://wp.hapas.io/wp-content/uploads/unnamed-file.gif/ditto-02.gif',
+    'https://wp.hapas.io/wp-content/uploads/4log/unnamed-file.gif/ditto-02.gif',
   );
   const excerpt = text(
     'excerpt',
@@ -27,7 +27,7 @@ export const standard = () => {
   const footer = {
     icon: text(
       'Category Icon',
-      'https://wp.hapas.io/wp-content/uploads/pokemon/038-gaming.svg',
+      'https://wp.hapas.io/wp-content/uploads/4log/pokemon/038-gaming.svg',
     ),
     title: text('Category title', 'Pokemon'),
   };

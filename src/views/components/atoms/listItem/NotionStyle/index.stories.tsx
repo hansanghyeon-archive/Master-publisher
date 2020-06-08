@@ -18,7 +18,7 @@ export default {
 export const standard = () => {
   const imgSrc = text(
     'Image src',
-    'https://wp.hapas.io/wp-content/uploads/icons/React.png',
+    'https://wp.hapas.io/wp-content/uploads/4log/icons/React.png',
   );
   const Text = text('Text', 'React');
   return <NotionStyleListItem imgSrc={imgSrc}>{Text}</NotionStyleListItem>;

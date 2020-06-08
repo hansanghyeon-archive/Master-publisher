@@ -67,8 +67,8 @@ const ErrorRefrashBtn = () => {
         ref={icon}
         src={
           hover
-            ? 'https://wp.hapas.io/wp-content/uploads/icons/redo-alt-solid.svg'
-            : 'https://wp.hapas.io/wp-content/uploads/icons/alert.svg'
+            ? 'https://wp.hapas.io/wp-content/uploads/4log/icons/redo-alt-solid.svg'
+            : 'https://wp.hapas.io/wp-content/uploads/4log/icons/alert.svg'
         }
         alt=""
       />

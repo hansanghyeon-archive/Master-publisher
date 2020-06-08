@@ -31,7 +31,7 @@ const SeriesList = ({ data }: any) => {
       <Header toggle={toggle}>
         <Title>{query.series.name}</Title>
         <Img
-          src="https://wp.hapas.io/wp-content/uploads/icons/book.svg"
+          src="https://wp.hapas.io/wp-content/uploads/4log/icons/book.svg"
           alt="Series"
         />
       </Header>
