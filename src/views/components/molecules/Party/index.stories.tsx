@@ -13,4 +13,4 @@ export default {
   ],
 };
 
-// export const standard = () => <Party />;
+export const standard = () => <Party />;
