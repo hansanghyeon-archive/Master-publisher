@@ -52,7 +52,12 @@ addParameters({
 addDecorator((story) => (
   <>
     <GlobalStyle />
-    {story()}
+    <div
+      style={{ width: '100%', height: '100%' }}
+      className="pattern-cross-dots-md bg-indigo"
+    >
+      {story()}
+    </div>
   </>
 ));
 
