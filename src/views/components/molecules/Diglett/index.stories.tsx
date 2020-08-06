@@ -20,6 +20,7 @@ export const standard = () => {
     Demo1: 'Demo1',
     Demo2: 'Demo2',
     Demo3: 'Demo3',
+    hidden: 'hidden',
   };
   const defaultValue = 'Demo1';
   const groupId = 'GROUP-ID1';

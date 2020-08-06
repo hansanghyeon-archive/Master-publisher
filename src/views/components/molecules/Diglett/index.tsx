@@ -36,7 +36,7 @@ const Diglett: React.FC<props> = ({ type }: props) => {
     <DiglettRoot>
       <MoveWrap
         key={type}
-        animate="toggle"
+        animate={type === 'hidden' ? type : 'toggle'}
         variants={variansts}
         transition={{
           duration: 1.5,
