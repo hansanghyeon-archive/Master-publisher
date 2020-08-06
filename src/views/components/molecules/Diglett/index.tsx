@@ -43,6 +43,7 @@ const Diglett: React.FC<props> = ({ type }: props) => {
           times: [0, 0.2, 0.3, 0.7, 0.8, 1],
           ease: 'easeInOut',
           repeatDelay: 1,
+          loop: Infinity,
         }}
       >
         {RenderComponent({ type: delayedType })}
