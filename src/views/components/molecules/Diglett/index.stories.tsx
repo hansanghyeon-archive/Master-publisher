@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, radios } from '@storybook/addon-knobs';
 
 // components
 import CenterWrap from '@atom/wrap/Center';
@@ -15,5 +15,17 @@ export default {
 };
 
 export const standard = () => {
-  return <Diglett />;
+  const label = 'Rendering Component';
+  const options = {
+    Demo1: 'Demo1',
+    Demo2: 'Demo2',
+    Demo3: 'Demo3',
+  };
+  const defaultValue = 'Demo1';
+  const groupId = 'GROUP-ID1';
+
+  const props = {
+    type: radios(label, options, defaultValue, groupId),
+  };
+  return <Diglett {...props} />;
 };
