@@ -31,8 +31,6 @@ export const standard = () => {
   const props = { imgSrc, excerpt, date: _date, footer };
   return <PostCard {...props} />;
 };
-standard.story = {
-  parameters: {
-    preview: previews,
-  },
+standard.parameters = {
+  preview: previews,
 };

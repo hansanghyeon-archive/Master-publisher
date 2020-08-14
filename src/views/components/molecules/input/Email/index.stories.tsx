@@ -15,8 +15,6 @@ export default {
 };
 
 export const standard = () => <EmailInput />;
-standard.story = {
-  parameters: {
-    preview: previews,
-  },
+standard.parameters = {
+  preview: previews,
 };

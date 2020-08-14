@@ -8,6 +8,4 @@ export default {
   component: DayNightBtn,
 };
 export const standard = () => <DayNightBtn />;
-standard.story = {
-  decorators: [(storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>],
-};
+standard.decorators = [(storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>];

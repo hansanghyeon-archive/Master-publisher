@@ -80,8 +80,6 @@ export const standard = () => {
   });
 };
 
-standard.story = {
-  parameters: {
-    preview: previews,
-  },
+standard.parameters = {
+  preview: previews,
 };

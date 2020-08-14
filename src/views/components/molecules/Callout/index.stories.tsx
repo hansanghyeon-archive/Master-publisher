@@ -26,8 +26,6 @@ export const standard = () => {
 
   return <Callout icon={icon}>{children}</Callout>;
 };
-standard.story = {
-  parameters: {
-    preview: previews,
-  },
+standard.parameters = {
+  preview: previews,
 };

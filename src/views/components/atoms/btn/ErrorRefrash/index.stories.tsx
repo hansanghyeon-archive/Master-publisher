@@ -32,8 +32,6 @@ export default {
 };
 
 export const standard = () => <ErrorRefrashBtn />;
-standard.story = {
-  parameters: {
-    preview: previews,
-  },
+standard.parameters = {
+  preview: previews,
 };

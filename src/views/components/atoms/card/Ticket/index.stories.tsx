@@ -52,9 +52,8 @@ const MockContext = () => {
 };
 
 export const standard = () => <MockContext />;
-standard.story = {
-  name: 'v1.0.0',
-  parameters: {
-    preview: previews,
-  },
+
+standard.storyName = 'v1.0.0';
+standard.parameters = {
+  preview: previews,
 };

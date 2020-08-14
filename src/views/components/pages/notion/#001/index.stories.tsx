@@ -24,9 +24,7 @@ export const standard = () => {
   };
   return <COMPONENT {...props} />;
 };
-standard.story = {
-  name: 'Tranditional Page Lifecycle',
-};
+standard.storyName = 'Tranditional Page Lifecycle';
 
 export const standard2 = () => {
   const props = {
