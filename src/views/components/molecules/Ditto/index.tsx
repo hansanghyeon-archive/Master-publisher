@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+
 import moment from 'moment';
-import 'moment/locale/ko';
 import { TimelineLite, Power1 } from 'gsap';
 import ThemeProvider, { ThemeList } from '@style/themes';
 import NotionStyleListItem from '@atom/listItem/NotionStyle';

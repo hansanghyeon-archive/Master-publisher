@@ -39,6 +39,7 @@
     "@types/react-lottie": "^1.2.3",
     "axios": "^0.19.2",
     "framer-motion": "^1.8.4",
+    "gsap": "^3.5.0",
     "html-react-parser": "^0.10.3",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",

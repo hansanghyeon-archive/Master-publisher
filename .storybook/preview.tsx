@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { withThemesProvider } from 'themeprovider-storybook';
 import themes from '../src/views/styles/themes/index.stories';
+import 'moment/locale/ko';
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {

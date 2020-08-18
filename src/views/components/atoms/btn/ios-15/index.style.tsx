@@ -1,6 +1,24 @@
 import styled, { keyframes } from 'styled-components';
 import { rgba } from 'polished';
 
+export const variavariansts = {
+  duration: '7s',
+  easing: 'linear',
+  c: {
+    color: [
+      '#fff',
+      rgba('#ffa31a', 0.7),
+      '#1a23ff',
+      '#e21bda',
+      rgba('#ffe81a', 0.7),
+    ],
+    shadow: rgba('#ffdf57', 0.5),
+    shadowInsetTop: rgba('#ffdf34', 0.9),
+    shadowInsetBottom: rgba('#fffad7', 0.8),
+    radialInner: '#ffd215',
+    radialOuter: '#fff172',
+  },
+};
 export const BtnRoot = styled.button`
   --duration: 7s;
   --easing: linear;
@@ -71,18 +89,18 @@ const circleAnimationTemplate = (p: number[]) => keyframes`
 `;
 const circleAnimation = [
   null,
-  circleAnimationTemplate([0, 16, 12, 64]), // circle-1
-  circleAnimationTemplate([80, -10, 72, -48]), // circle-2
-  circleAnimationTemplate([20, 12, 12, 4]), // circle-3
-  circleAnimationTemplate([76, -12, 112, -8]), // circle-4
-  circleAnimationTemplate([84, 28, 40, -32]), // circle-5
-  circleAnimationTemplate([28, -16, 76, -56]), // circle-6
-  circleAnimationTemplate([8, 28, 20, -60]), // circle-7
-  circleAnimationTemplate([32, -4, 56, -20]), // circle-8
-  circleAnimationTemplate([20, -12, 80, -8]), // circle-9
-  circleAnimationTemplate([68, 20, 100, 28]), // circle-10
-  circleAnimationTemplate([4, 4, 68, 20]), // circle-11
-  circleAnimationTemplate([56, 0, 60, -32]), // circle-12
+  /* circle-1  */ circleAnimationTemplate([0, 16, 12, 64]),
+  /* circle-2  */ circleAnimationTemplate([80, -10, 72, -48]),
+  /* circle-3  */ circleAnimationTemplate([20, 12, 12, 4]),
+  /* circle-4  */ circleAnimationTemplate([76, -12, 112, -8]),
+  /* circle-5  */ circleAnimationTemplate([84, 28, 40, -32]),
+  /* circle-6  */ circleAnimationTemplate([28, -16, 76, -56]),
+  /* circle-7  */ circleAnimationTemplate([8, 28, 20, -60]),
+  /* circle-8  */ circleAnimationTemplate([32, -4, 56, -20]),
+  /* circle-9  */ circleAnimationTemplate([20, -12, 80, -8]),
+  /* circle-10 */ circleAnimationTemplate([68, 20, 100, 28]),
+  /* circle-11 */ circleAnimationTemplate([4, 4, 68, 20]),
+  /* circle-12 */ circleAnimationTemplate([56, 0, 60, -32]),
 ];
 export const Circle = styled.div`
   position: absolute;
