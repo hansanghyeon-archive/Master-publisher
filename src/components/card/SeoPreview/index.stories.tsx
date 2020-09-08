@@ -1,6 +1,5 @@
 import React from 'react';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs';
-// import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@/wrap/Center';
 // import SeoPreviewCard from '@bit/m5p8.card.seo-preview';

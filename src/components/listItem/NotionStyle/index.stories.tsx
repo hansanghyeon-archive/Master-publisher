@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
-import { withPreview } from 'storybook-addon-preview';
+
 // Context
 import CenterWrap from '@/wrap/Center';
 // Components

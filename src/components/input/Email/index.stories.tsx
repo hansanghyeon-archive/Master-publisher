@@ -1,5 +1,5 @@
 import React from 'react';
-import { withPreview } from 'storybook-addon-preview';
+
 // component
 import CenterWrap from '@/wrap/Center';
 import EmailInput from '.';

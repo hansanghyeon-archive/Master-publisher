@@ -1,17 +1,14 @@
 import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs';
-import { withPreview } from 'storybook-addon-preview';
-
+// Components
 import CenterWrap from '@/wrap/Center';
 import Callout from '.';
-import previews from './previews/index';
 
 export default {
   title: 'components/Callout',
   component: Callout,
   decorators: [
     withKnobs,
-    withPreview,
     (storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>,
   ],
 };
@@ -25,7 +22,4 @@ export const standard = () => {
   const children = text('Content', mockData.text);
 
   return <Callout icon={icon}>{children}</Callout>;
-};
-standard.parameters = {
-  preview: previews,
 };
