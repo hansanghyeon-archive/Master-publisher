@@ -16,14 +16,8 @@
   "packageManager": "npm",
   "resolveModules": {
     "aliases": {
-      "@src": "src",
-      "@view": "src/views",
-      "@atom": "src/views/components/atoms",
-      "@molecule": "src/views/components/molecules",
-      "@organism": "src/views/components/organisms",
-      "@template": "src/views/components/templates",
-      "@animation": "src/views/components/animations",
-      "@style": "src/views/styles",
+      "@": "src/components",
+      "@style": "src/styles",
       "@utile": "src/utilites",
       "@model": "src/models"
     }

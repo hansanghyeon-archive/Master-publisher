@@ -1,40 +1,19 @@
 {
   "compilerOptions": {
-    "baseUrl": ".", /* Base directory to resolve non-absolute module names. */
+    "baseUrl": ".",
     "paths": {
-      "@src/*": [
-        "src/*"
-      ],
-      // Views
-      "@view/*": [
-        "src/views/*"
-      ],
-      "@atom/*": [
-        "src/views/components/atoms/*"
-      ],
-      "@molecule/*": [
-        "src/views/components/molecules/*"
-      ],
-      "@organism/*": [
-        "src/views/components/organisms/*"
-      ],
-      "@template/*": [
-        "src/views/components/templates/*"
+      "@/*": [
+        "src/components/*"
       ],
       "@animation/*": [
-        "src/views/components/animations/*"
+        "src/components/animations/*"
       ],
       "@style/*": [
-        "src/views/styles/*"
+        "src/styles/*"
       ],
-      // Utilities
       "@utile/*": [
         "src/utilites/*"
       ],
-      // Models
-      "@model/*": [
-        "src/models/*"
-      ]
-    }, /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    },
   }
 }
