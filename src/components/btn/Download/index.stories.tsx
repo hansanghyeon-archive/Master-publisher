@@ -5,7 +5,7 @@ import CenterWrap from '@/wrap/Center';
 import DownloadButton from '.';
 
 export default {
-  title: 'Button/Download',
+  title: 'components/Button/Download',
   component: DownloadButton,
   decorators: [
     withKnobs,

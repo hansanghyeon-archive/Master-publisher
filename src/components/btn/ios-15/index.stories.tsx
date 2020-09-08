@@ -4,7 +4,7 @@ import CenterWrap from '@/wrap/Center';
 import Ios15Btn from '.';
 
 export default {
-  title: 'Button/ios-15',
+  title: 'components/Button/ios-15',
   component: Ios15Btn,
   decorators: [
     withKnobs,

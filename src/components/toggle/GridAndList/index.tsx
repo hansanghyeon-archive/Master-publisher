@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.scss';
+import './index.style.scss';
 
 const GridAndListToggle = () => {
   const [isActive, setIsActive] = useState(false);

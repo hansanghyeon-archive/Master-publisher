@@ -19,7 +19,7 @@ const WidthWrap = styled.div`
 `;
 
 export default {
-  title: 'Button/ErrorRefrash',
+  title: 'components/Button/ErrorRefrash',
   component: ErrorRefrashBtn,
   decorators: [
     withPreview,

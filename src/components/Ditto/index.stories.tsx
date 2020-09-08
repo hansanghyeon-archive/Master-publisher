@@ -6,7 +6,7 @@ import CenterWrap from '@/wrap/Center';
 import Ditto from '.';
 
 export default {
-  title: 'Ditto',
+  title: 'components/Ditto',
   component: Ditto,
   decorators: [
     withKnobs,

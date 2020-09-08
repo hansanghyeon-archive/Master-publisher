@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default {
-  title: 'Toggle/Menu',
+  title: 'components/Toggle/Menu',
   component: MenuBtn,
 };
 

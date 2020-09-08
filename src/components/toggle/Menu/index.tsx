@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import './style.scss';
+import './index.style.scss';
 
 const StyledBtn = styled.button`
   width: 36px;

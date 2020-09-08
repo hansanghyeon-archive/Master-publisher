@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrap, ImgWrap } from './style';
 
 interface Props {
-  imgSrc: string | undefined;
+  imgSrc?: string;
   children: React.ReactNode;
 }
 
@@ -22,5 +22,6 @@ const NotionStyleListItem = ({ imgSrc, children }: Props) => (
     </div>
   </Wrap>
 );
+NotionStyleListItem.defaultProps = { imgSrc: undefined };
 
 export default NotionStyleListItem;

@@ -5,7 +5,7 @@ import CenterWrap from '@/wrap/Center';
 import SeriesList from '.';
 
 export default {
-  title: 'List/Series',
+  title: 'components/List/Series',
   component: SeriesList,
   decorators: [
     withKnobs,
@@ -24,13 +24,13 @@ export const standard = () => {
               {
                 node: {
                   slug: 'what-is-spa',
-                  title: 'SPA란?',
+                  title: 'components/SPA란?',
                 },
               },
               {
                 node: {
                   slug: 'which-ssr-or-csr-should-be-used',
-                  title: 'SSR, CSR 도대체 무엇이 좋을까?',
+                  title: 'components/SSR, CSR 도대체 무엇이 좋을까?',
                 },
               },
             ],

@@ -7,7 +7,7 @@ import TicketCard from '.';
 import previews from './previews';
 
 export default {
-  title: 'Card/Ticket',
+  title: 'components/Card/Ticket',
   component: TicketCard,
   decorators: [
     withKnobs,

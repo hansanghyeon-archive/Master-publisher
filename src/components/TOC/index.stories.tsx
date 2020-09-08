@@ -6,7 +6,7 @@ import CenterWrap from '@/wrap/Center';
 import TOC from '.';
 
 export default {
-  title: 'TOC',
+  title: 'components/TOC',
   component: TOC,
   decorators: [
     withKnobs,

@@ -6,7 +6,7 @@ import EmailInput from '.';
 import previews from './previews';
 
 export default {
-  title: 'Input/Email',
+  title: 'components/Input/Email',
   component: EmailInput,
   decorators: [
     withPreview,

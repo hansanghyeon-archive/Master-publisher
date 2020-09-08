@@ -8,7 +8,7 @@ import PostCard from '.';
 import previews from './previews/index';
 
 export default {
-  title: 'Card/Post',
+  title: 'components/Card/Post',
   component: PostCard,
   decorators: [
     withKnobs,

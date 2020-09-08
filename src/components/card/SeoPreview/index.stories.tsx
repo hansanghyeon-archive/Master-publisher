@@ -4,11 +4,10 @@ import { withKnobs, object, boolean } from '@storybook/addon-knobs';
 // components
 import CenterWrap from '@/wrap/Center';
 // import SeoPreviewCard from '@bit/m5p8.card.seo-preview';
-import { ThemeList } from '@style/themes';
 import SeoPreviewCard from '.';
 
 export default {
-  title: 'Card/SeoPreview',
+  title: 'components/Card/SeoPreview',
   component: SeoPreviewCard,
   decorators: [
     withKnobs,
@@ -20,7 +19,7 @@ export const standard = () => {
   const resData = object('Data', {
     site_name: 'Medium',
     type: 'article',
-    title: 'Puppeteer 간단 정리하기',
+    title: 'components/Puppeteer 간단 정리하기',
     description:
       'Puppeteer 는 Headless Chrome 혹은 Chromium 를 제어하도록 도와주는 라이브러리 이다.',
     url:
@@ -37,7 +36,6 @@ export const standard = () => {
       reqUrl:
         'https://medium.com/@pks2974/puppeteer-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-a252bffbb2a8',
     },
-    theme: ThemeList.dark,
   };
   return <SeoPreviewCard {...props} />;
 };

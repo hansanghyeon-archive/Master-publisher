@@ -12,7 +12,7 @@ const FlexBox = styled.div`
 `;
 
 export default {
-  title: 'Card/HoverOver',
+  title: 'components/Card/HoverOver',
   component: HoverOverCard,
   decorators: [
     withKnobs,
@@ -45,28 +45,28 @@ const KnobsGroup = ({
 const mockData = [
   {
     imgSrc: 'https://source.unsplash.com/collection/9641990',
-    title: '봄',
+    title: 'components/봄',
     content: '[unsplash] 봄 collections',
     interactionValue: 15,
     groupName: 'Card1',
   },
   {
     imgSrc: 'https://source.unsplash.com/collection/9683070',
-    title: '여름',
+    title: 'components/여름',
     content: '[unsplash] 여름 collections',
     interactionValue: 15,
     groupName: 'Card2',
   },
   {
     imgSrc: 'https://source.unsplash.com/collection/9683123',
-    title: '가을',
+    title: 'components/가을',
     content: '[unsplash] 가을 collections',
     interactionValue: 15,
     groupName: 'Card3',
   },
   {
     imgSrc: 'https://source.unsplash.com/collection/9683129',
-    title: '겨울',
+    title: 'components/겨울',
     content: '[unsplash] 겨울 collections',
     interactionValue: 15,
     groupName: 'Card4',

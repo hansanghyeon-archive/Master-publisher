@@ -4,7 +4,7 @@ import CenterWrap from '@/wrap/Center';
 import GridAndListToggle from '.';
 
 export default {
-  title: 'Toggle/Grid and List',
+  title: 'components/Toggle/Grid and List',
   component: GridAndListToggle,
   decorators: [(storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>],
 };

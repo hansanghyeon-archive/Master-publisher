@@ -1,4 +1,4 @@
-import './style.scss';
+import './index.style.scss';
 import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';

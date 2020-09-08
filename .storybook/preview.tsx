@@ -42,6 +42,7 @@ addParameters({
     page: DocsPage,
   },
   options: {
+    showRoots: false,
     storySort: (a, b) =>
       a[1].kind === b[1].kind
         ? 0

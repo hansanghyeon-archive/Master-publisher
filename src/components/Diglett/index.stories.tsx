@@ -6,7 +6,7 @@ import CenterWrap from '@/wrap/Center';
 import Diglett from './index';
 
 export default {
-  title: 'Diglett',
+  title: 'components/Diglett',
   component: Diglett,
   decorators: [
     withKnobs,

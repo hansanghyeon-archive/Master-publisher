@@ -8,7 +8,7 @@ import PostListItem from '.';
 import previews from './previews/index';
 
 export default {
-  title: 'List Item/Post',
+  title: 'components/List Item/Post',
   component: PostListItem,
   decorators: [
     withKnobs,

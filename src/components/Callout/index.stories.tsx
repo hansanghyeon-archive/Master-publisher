@@ -7,7 +7,7 @@ import Callout from '.';
 import previews from './previews/index';
 
 export default {
-  title: 'Callout',
+  title: 'components/Callout',
   component: Callout,
   decorators: [
     withKnobs,
