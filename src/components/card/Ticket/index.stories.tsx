@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { withKnobs, object } from '@storybook/addon-knobs';
-import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@/wrap/Center';
 import TicketCard from '.';
-import previews from './previews';
 
 export default {
   title: 'components/Card/Ticket',
   component: TicketCard,
   decorators: [
     withKnobs,
-    withPreview,
     (storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>,
   ],
 };
@@ -54,6 +51,3 @@ const MockContext = () => {
 export const standard = () => <MockContext />;
 
 standard.storyName = 'v1.0.0';
-standard.parameters = {
-  preview: previews,
-};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, text, date, boolean } from '@storybook/addon-knobs';
-// import { withPreview } from 'storybook-addon-preview';
+
 // components
 import CenterWrap from '@/wrap/Center';
 import Ditto from '.';
