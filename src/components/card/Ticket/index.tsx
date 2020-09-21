@@ -2,8 +2,7 @@ import './index.style.scss';
 import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
+import { FaLongArrowAltRight } from 'react-icons/fa';
 import { TimelineLite, Power1 } from 'gsap';
 
 import moment from 'moment';
@@ -55,7 +54,7 @@ const Label = styled.div`
   color: ${({ theme }) => theme.color.text[2]};
 `;
 
-const StyledFa = styled(FontAwesomeIcon)`
+const StyledFa = styled(FaLongArrowAltRight)`
   color: ${({ theme }) => theme.color.primary};
   font-size: 20px;
 `;
@@ -109,7 +108,7 @@ const THeader = ({ name, start, end }: THeaderType) => (
       <div>{start.address}</div>
     </Col>
     <Col className="col-center" col={1}>
-      <StyledFa icon={faLongArrowAltRight} />
+      <StyledFa />
     </Col>
     <Col className="col-right" col>
       <Name className="name">{end.name}</Name>
