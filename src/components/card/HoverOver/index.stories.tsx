@@ -3,6 +3,7 @@ import { withKnobs, text, number } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 // Components
 import CenterWrap from '@/wrap/Center';
+import * as Bit from '@bit/hansanghyeon.card.hoverover';
 import HoverOverCard from '.';
 
 const FlexBox = styled.div`
@@ -75,4 +76,9 @@ export const standard = () => {
     const props = KnobsGroup(data);
     return <HoverOverCard {...props.data} />;
   });
+};
+
+export const bit = () => {
+  const BitHoverOverCard = Bit.default;
+  return <BitHoverOverCard {...mockData[0]} />;
 };
