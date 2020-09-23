@@ -6,7 +6,7 @@ import NotionStyleListItem from '@/listItem/NotionStyle';
 import Ditto from '.';
 
 export default {
-  title: 'components/Ditto',
+  title: 'components/Card/Ditto',
   component: Ditto,
   decorators: [
     withKnobs,
