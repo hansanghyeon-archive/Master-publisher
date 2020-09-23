@@ -4,11 +4,11 @@ import { media } from 'styled-bootstrap-grid';
 import { motion } from 'framer-motion';
 
 export const DittoRoot = styled.div`
-  --bg-color: ${({ theme }) => theme.color.bg[0]};
-  --bg1-color: ${({ theme }) => theme.color.bg[1]};
-  --bg-blur-color: ${({ theme }) => transparentize(0.75, theme.color.bg[0])};
-  --color: ${({ theme }) => theme.color.text[0]};
-  --color1: ${({ theme }) => theme.color.text[1]};
+  --bg-color: ${({ theme }) => theme.color?.bg[0]};
+  --bg1-color: ${({ theme }) => theme.color?.bg[1]};
+  --bg-blur-color: ${({ theme }) => transparentize(0.75, theme.color?.bg[0])};
+  --color: ${({ theme }) => theme.color?.text[0]};
+  --color1: ${({ theme }) => theme.color?.text[1]};
 
   color: var(--color, #333);
   padding: 1rem;
