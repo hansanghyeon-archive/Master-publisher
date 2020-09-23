@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { respondTo } from '@style/gridSystem';
+import { media } from 'styled-bootstrap-grid';
+import { motion } from 'framer-motion';
 
 export const DittoRoot = styled.div`
   color: ${({ theme }) => theme.color.text[0]};
@@ -44,13 +45,12 @@ const BaseThumnail = styled.div<{ imgSrc?: string }>`
   background-repeat: no-repeat;
 `;
 
-const BaseMainInner = styled.div`
+const BaseMainInner = styled(motion.div)`
   background-color: ${({ theme }) => theme.color.bg[0]};
   position: relative;
   z-index: 200;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
-  margin-left: calc(80px - 1rem);
   will-change: padding-left, z-index, transform, margin-left, box-shadow;
 `;
 
@@ -124,9 +124,9 @@ const nonThumnail = {
     margin-top: 0 !important;
     border-radius: 8px !important;
     ${BaseContent} {
-      ${respondTo.sm} {
+      ${media.sm`
         max-width: calc(280px + 80px - 1rem);
-      }
+      `}
       transition: max-width 0.45s;
     }
   `,

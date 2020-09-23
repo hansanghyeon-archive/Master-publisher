@@ -1,8 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-
-import moment from 'moment';
-import { TimelineLite, Power1 } from 'gsap';
-import NotionStyleListItem from '@/listItem/NotionStyle';
+import React, { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
 import {
   DittoRoot,
   Main,
@@ -16,38 +13,48 @@ import {
   CategoryLabel,
 } from './style';
 
-interface DittoProps {
-  data: {
-    excerpt: string;
-    date: number;
-    footer: {
-      icon: string;
-      title: string;
-    };
-    imgSrc?: string;
-    title: string;
-    isGrid: boolean;
-  };
-}
-const Ditto = ({ data }: DittoProps) => {
-  const { imgSrc, excerpt, date, footer, title, isGrid } = data;
-  const MainInnerRef = useRef<HTMLDivElement>(null);
+type DittoProps = {
+  excerpt: string;
+  date: number;
+  footer: () => JSX.Element;
+  imgSrc?: string;
+  title: string;
+  isGrid: boolean;
+};
+const Ditto: React.FC<DittoProps> = ({
+  imgSrc,
+  excerpt,
+  date,
+  footer,
+  title,
+  isGrid,
+}: DittoProps) => {
+  const [animate, setAnimate] = useState({});
   const _excerpt = () => {
     if (excerpt.length < 118) return excerpt;
     return `${excerpt.substring(0, 110)}...`;
   };
   useEffect(() => {
-    const tl = new TimelineLite();
     if (isGrid) {
-      tl.to(MainInnerRef.current, 0.05, {
-        marginLeft: '0',
-      }).to(MainInnerRef.current, 0.2, {
-        marginTop: '54%',
-        ease: Power1.easeOut,
+      setAnimate({
+        animate: {
+          marginLeft: ['58px', 0],
+          marginTop: [0, '54%'],
+        },
+        transition: {
+          times: [0.05, 0.2],
+        },
       });
     } else {
-      tl.to(MainInnerRef.current, 0.25, {
-        style: null,
+      setAnimate({
+        animate: {
+          marginLeft: [0, '58px'],
+          marginTop: ['54%', 0],
+        },
+        transition: {
+          duration: 0.25,
+          times: [0, 0.25],
+        },
       });
     }
   });
@@ -55,23 +62,22 @@ const Ditto = ({ data }: DittoProps) => {
     <DittoRoot>
       <Main isGrid={isGrid} isThumnail={!!imgSrc}>
         <Thumnail imgSrc={imgSrc} isGrid={isGrid} isThumnail={!!imgSrc} />
-        <MainInner ref={MainInnerRef} isGrid={isGrid} isThumnail={!!imgSrc}>
+        <MainInner {...animate} isGrid={isGrid} isThumnail={!!imgSrc}>
           <Body>
             <Title>{title}</Title>
             <Content isThumnail={!!imgSrc}>{_excerpt()}</Content>
           </Body>
           <Footer>
-            <CategoryLabel>
-              <NotionStyleListItem imgSrc={footer.icon}>
-                {footer.title}
-              </NotionStyleListItem>
-            </CategoryLabel>
-            <Date>{moment(date).format('YYYY.M.D')}</Date>
+            <CategoryLabel>{footer()}</CategoryLabel>
+            <Date>{dayjs(date).format('YYYY.M.D')}</Date>
           </Footer>
         </MainInner>
       </Main>
     </DittoRoot>
   );
+};
+Ditto.defaultProps = {
+  imgSrc: '',
 };
 
 export default Ditto;
