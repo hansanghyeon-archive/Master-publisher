@@ -4,8 +4,13 @@ import { media } from 'styled-bootstrap-grid';
 import { motion } from 'framer-motion';
 
 export const DittoRoot = styled.div`
-  color: ${({ theme }) => theme.color.text[0]};
+  --bg-color: ${({ theme }) => theme.color.bg[0]};
+  --bg1-color: ${({ theme }) => theme.color.bg[1]};
+  --bg-blur-color: ${({ theme }) => transparentize(0.75, theme.color.bg[0])};
+  --color: ${({ theme }) => theme.color.text[0]};
+  --color1: ${({ theme }) => theme.color.text[1]};
 
+  color: var(--color, #333);
   padding: 1rem;
   min-height: 48px;
   position: relative;
@@ -30,7 +35,7 @@ const BaseMain = styled.div`
 
 const BaseThumnail = styled.div<{ imgSrc?: string }>`
   background-image: url(${({ imgSrc }) => imgSrc});
-  background-color: ${({ theme }) => transparentize(0.75, theme.color.bg[0])};
+  background-color: var(--bg-blur-color, ${transparentize(0.75, '#fff')});
   width: 80px;
   height: 100%;
   position: absolute;
@@ -46,7 +51,7 @@ const BaseThumnail = styled.div<{ imgSrc?: string }>`
 `;
 
 const BaseMainInner = styled(motion.div)`
-  background-color: ${({ theme }) => theme.color.bg[0]};
+  background-color: var(--bg-color, #fff);
   position: relative;
   z-index: 200;
   border-radius: 8px;
@@ -76,7 +81,7 @@ export const Footer = styled.div`
 `;
 
 const BaseContent = styled.div`
-  color: ${({ theme }) => theme.color.text[1]};
+  color: var(--color1, #4a4f57);
 
   max-width: 280px;
   height: 3.9rem;
@@ -84,11 +89,11 @@ const BaseContent = styled.div`
   font-size: 0.875rem;
 `;
 export const Date = styled.div`
-  color: ${({ theme }) => theme.color.text[2]};
+  color: var(--color1, #4a4f57);
   font-size: 0.75rem;
 `;
 export const CategoryLabel = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[1]};
+  background-color: var(--bg1-color, #f6f8ff);
   border-radius: 8px;
   padding: 0.25rem 8px;
 `;
