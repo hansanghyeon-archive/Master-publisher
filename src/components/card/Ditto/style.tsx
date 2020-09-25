@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { media } from 'styled-bootstrap-grid';
-import { motion } from 'framer-motion';
 
 export const DittoRoot = styled.div`
   --bg-color: ${({ theme }) => theme.color?.bg[0]};
@@ -38,6 +37,7 @@ const BaseThumnail = styled.div<{ imgSrc?: string }>`
   background-image: url(${({ imgSrc }) => imgSrc});
   background-color: var(--bg-blur-color, ${transparentize(0.75, '#fff')});
   width: 80px;
+  max-width: calc(280px + 2rem);
   height: 100%;
   position: absolute;
   z-index: 100;
@@ -51,16 +51,17 @@ const BaseThumnail = styled.div<{ imgSrc?: string }>`
   background-repeat: no-repeat;
 `;
 
-const BaseMainInner = styled(motion.div)`
+const BaseMainInner = styled.div`
   background-color: var(--bg-color, #fff);
   position: relative;
   z-index: 200;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
+  margin-left: calc(80px - 1rem);
   will-change: padding-left, z-index, transform, margin-left, box-shadow;
 `;
 
-export const Body = styled.div`
+const BaseBody = styled.div`
   padding: 0.5rem 1rem;
 `;
 export const Title = styled.div`
@@ -85,10 +86,12 @@ const BaseContent = styled.div`
   color: var(--color1, #4a4f57);
 
   max-width: 280px;
-  height: 3.9rem;
+  height: 4rem;
   overflow: hidden;
   font-size: 0.875rem;
+  transition: max-width 0.45s;
 `;
+
 export const Date = styled.div`
   color: var(--color1, #4a4f57);
   font-size: 0.75rem;
@@ -179,6 +182,9 @@ const Grid = {
       }
     }
   `,
+  body: css`
+    padding: 1rem;
+  `,
 };
 
 type IsThumnail = {
@@ -198,6 +204,15 @@ export const Thumnail = styled(BaseThumnail)<Props>`
 export const MainInner = styled(BaseMainInner)<Props>`
   ${({ isGrid }) => isGrid && Grid.mainInner}
   ${({ isThumnail }) => !isThumnail && nonThumnail.mainInner}
+  ${({
+    isGrid,
+    isThumnail,
+  }) =>
+    isGrid &&
+    !isThumnail &&
+    css`
+      max-width: calc(280px + 2rem);
+    `};
 `;
 
 export const Main = styled(BaseMain)<Props>`
@@ -205,6 +220,17 @@ export const Main = styled(BaseMain)<Props>`
   ${({ isThumnail }) => !isThumnail && nonThumnail.main}
 `;
 
-export const Content = styled(BaseContent)<IsThumnail>`
+const nonThumnailAndNonGrid = css`
+  ${media.sm`
+    max-width: calc(280px + 80px - 1rem);
+  `}
+`;
+
+export const Content = styled(BaseContent)<Props>`
   ${({ isThumnail }) => !isThumnail && nonThumnail.content}
+  ${({ isThumnail, isGrid }) => !isThumnail && !isGrid && nonThumnailAndNonGrid}
+`;
+
+export const Body = styled(BaseBody)<Props>`
+  ${({ isGrid, isThumnail }) => isGrid && isThumnail && Grid.body}
 `;

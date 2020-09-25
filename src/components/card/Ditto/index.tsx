@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import dayjs from 'dayjs';
+import { TimelineLite, Power1 } from 'gsap';
 import {
   DittoRoot,
   Main,
@@ -13,14 +14,14 @@ import {
   CategoryLabel,
 } from './style';
 
-type DittoProps = {
+interface DittoProps {
   excerpt: string;
   date: number;
-  footer: () => JSX.Element;
+  footer: () => React.ReactNode;
   imgSrc?: string;
-  title: string;
+  title: () => React.ReactNode;
   isGrid: boolean;
-};
+}
 const Ditto: React.FC<DittoProps> = ({
   imgSrc,
   excerpt,
@@ -29,32 +30,23 @@ const Ditto: React.FC<DittoProps> = ({
   title,
   isGrid,
 }: DittoProps) => {
-  const [animate, setAnimate] = useState({});
+  const MainInnerRef = useRef<HTMLDivElement>(null);
   const _excerpt = () => {
     if (excerpt.length < 118) return excerpt;
     return `${excerpt.substring(0, 110)}...`;
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const tl = new TimelineLite();
     if (isGrid) {
-      setAnimate({
-        animate: {
-          marginLeft: ['58px', 0],
-          marginTop: [0, '54%'],
-        },
-        transition: {
-          times: [0.05, 0.2],
-        },
+      tl.to(MainInnerRef.current, 0.05, {
+        marginLeft: '0',
+      }).to(MainInnerRef.current, 0.2, {
+        marginTop: '54%',
+        ease: Power1.easeOut,
       });
     } else {
-      setAnimate({
-        animate: {
-          marginLeft: [0, '58px'],
-          marginTop: ['54%', 0],
-        },
-        transition: {
-          duration: 0.25,
-          times: [0, 0.25],
-        },
+      tl.to(MainInnerRef.current, 0.25, {
+        style: null,
       });
     }
   });
@@ -62,10 +54,12 @@ const Ditto: React.FC<DittoProps> = ({
     <DittoRoot>
       <Main isGrid={isGrid} isThumnail={!!imgSrc}>
         <Thumnail imgSrc={imgSrc} isGrid={isGrid} isThumnail={!!imgSrc} />
-        <MainInner {...animate} isGrid={isGrid} isThumnail={!!imgSrc}>
-          <Body>
-            <Title>{title}</Title>
-            <Content isThumnail={!!imgSrc}>{_excerpt()}</Content>
+        <MainInner ref={MainInnerRef} isGrid={isGrid} isThumnail={!!imgSrc}>
+          <Body isGrid={isGrid} isThumnail={!!imgSrc}>
+            <Title>{title()}</Title>
+            <Content isThumnail={!!imgSrc} isGrid={isGrid}>
+              {_excerpt()}
+            </Content>
           </Body>
           <Footer>
             <CategoryLabel>{footer()}</CategoryLabel>
