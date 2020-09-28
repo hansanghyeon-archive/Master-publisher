@@ -5,7 +5,8 @@
         "rawConfig": {
           "tsconfig": {
             "compilerOptions": {
-              "types": ["node"]
+              "types": ["node"],
+              "module": "CommonJS"
             }
           }
         }
