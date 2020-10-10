@@ -22,7 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "@bit/hansanghyeon.card.ditto": "^1.0.8",
-    "@bit/hansanghyeon.card.hoverover": "^1.0.4",
+    "@bit/hansanghyeon.card.hoverover": "^1.0.5",
     "@bit/hansanghyeon.list-item.notion-style": "^1.0.1",
     "@emotion/core": "^10.0.35",
     "@storybook/addon-actions": "^6.0.21",
