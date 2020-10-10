@@ -64,8 +64,9 @@ const BaseMainInner = styled.div`
 const BaseBody = styled.div`
   padding: 0.5rem 1rem;
 `;
-export const Title = styled.div`
+export const BaseTitle = styled.div`
   margin-bottom: 8px;
+  max-width: 280px;
   font-weight: bold;
 `;
 export const Footer = styled.div`
@@ -132,12 +133,6 @@ const nonThumnail = {
     margin-left: 0 !important;
     margin-top: 0 !important;
     border-radius: 8px !important;
-    ${BaseContent} {
-      ${media.sm`
-        max-width: calc(280px + 80px - 1rem);
-      `}
-      transition: max-width 0.45s;
-    }
   `,
   main: css`
     &:hover {
@@ -149,7 +144,10 @@ const nonThumnail = {
     }
   `,
   content: css`
-    max-width: 280px;
+    ${media.sm`
+      max-width: calc(280px + 80px - 1rem);
+    `}
+    transition: max-width 0.45s;
   `,
 };
 const Grid = {
@@ -220,17 +218,14 @@ export const Main = styled(BaseMain)<Props>`
   ${({ isThumnail }) => !isThumnail && nonThumnail.main}
 `;
 
-const nonThumnailAndNonGrid = css`
-  ${media.sm`
-    max-width: calc(280px + 80px - 1rem);
-  `}
-`;
-
-export const Content = styled(BaseContent)<Props>`
+export const Content = styled(BaseContent)<IsThumnail>`
   ${({ isThumnail }) => !isThumnail && nonThumnail.content}
-  ${({ isThumnail, isGrid }) => !isThumnail && !isGrid && nonThumnailAndNonGrid}
 `;
 
 export const Body = styled(BaseBody)<Props>`
   ${({ isGrid, isThumnail }) => isGrid && isThumnail && Grid.body}
+`;
+
+export const Title = styled(BaseTitle)<IsThumnail>`
+  ${({ isThumnail }) => !isThumnail && nonThumnail.content}
 `;

@@ -56,10 +56,8 @@ const Ditto: React.FC<DittoProps> = ({
         <Thumnail imgSrc={imgSrc} isGrid={isGrid} isThumnail={!!imgSrc} />
         <MainInner ref={MainInnerRef} isGrid={isGrid} isThumnail={!!imgSrc}>
           <Body isGrid={isGrid} isThumnail={!!imgSrc}>
-            <Title>{title()}</Title>
-            <Content isThumnail={!!imgSrc} isGrid={isGrid}>
-              {_excerpt()}
-            </Content>
+            <Title isThumnail={!!imgSrc}>{title()}</Title>
+            <Content isThumnail={!!imgSrc}>{_excerpt()}</Content>
           </Body>
           <Footer>
             <CategoryLabel>{footer()}</CategoryLabel>
