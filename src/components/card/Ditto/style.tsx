@@ -100,7 +100,7 @@ export const Date = styled.div`
 export const CategoryLabel = styled.div`
   display: flex;
   flex-wrap: wrap;
-  > div {
+  > * {
     margin-right: 8px;
     background-color: var(--bg1-color, #f6f8ff);
     border-radius: 8px;
