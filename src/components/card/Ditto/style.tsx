@@ -98,9 +98,14 @@ export const Date = styled.div`
   font-size: 0.75rem;
 `;
 export const CategoryLabel = styled.div`
-  background-color: var(--bg1-color, #f6f8ff);
-  border-radius: 8px;
-  padding: 0.25rem 8px;
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    margin-right: 8px;
+    background-color: var(--bg1-color, #f6f8ff);
+    border-radius: 8px;
+    padding: 0.25rem 8px;
+  }
 `;
 
 const List = {

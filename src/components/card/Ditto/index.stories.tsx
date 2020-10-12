@@ -25,15 +25,31 @@ export const standard = () => {
     'One of the Pokémon in Pokemon. It looks like a purple slime and has the ability to transform into another Pokemon.',
   );
   const _date = date('Date', new Date());
-  const footer = () => (
+  const FooterChild1 = () => (
     <NotionStyleListItem
       imgSrc={text(
-        'Category Icon',
+        'Category Icon 1',
         'https://wp.hapas.io/wp-content/uploads/4log/icons/pokemon/flat2/038-gaming.svg',
       )}
     >
-      {text('Category title', 'Pokemon')}
+      {text('Category title 1', 'Pokemon')}
     </NotionStyleListItem>
+  );
+  const FooterChild2 = () => (
+    <NotionStyleListItem
+      imgSrc={text(
+        'Category Icon 2',
+        'https://wp.hapas.io/wp-content/uploads/4log/icons/pokemon/flat2/038-gaming.svg',
+      )}
+    >
+      {text('Category title 2', 'Pokemon')}
+    </NotionStyleListItem>
+  );
+  const footer = () => (
+    <>
+      <FooterChild1 />
+      <FooterChild2 />
+    </>
   );
   const title = () => <div>{text('Title', 'Ditto component')}</div>;
   const isGrid = boolean('isGrid', true);
