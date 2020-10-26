@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6007 -s ./static",
-    "build": "build-storybook -o .out"
+    "build": "build-storybook -o .out",
+    "vercel-build": "build-storybook -o .out"
   },
   "keywords": [
     "publisher",
