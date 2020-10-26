@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "FILE_SERVER": "https://wp.hapas.io/wp-content/uploads"
+    }
+  }
+}
