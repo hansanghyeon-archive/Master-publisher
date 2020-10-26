@@ -30,7 +30,7 @@ const SeriesList = ({ data }: any) => {
       <Header toggle={toggle}>
         <Title>{query.series.name}</Title>
         <Img
-          src={`${process.env.FILE_SERVE}/4log/icons/book.svg`}
+          src={`${process.env.FILE_SERVER}/4log/icons/book.svg`}
           alt="Series"
         />
       </Header>
