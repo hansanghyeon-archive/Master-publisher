@@ -1,6 +1,5 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
-// import { withPreview } from 'storybook-addon-preview';
 // components
 import CenterWrap from '@/wrap/Center';
 import TOC from '.';

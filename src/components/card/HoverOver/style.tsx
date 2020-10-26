@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { respondTo } from '@style/gridSystem';
+import { media } from 'styled-bootstrap-grid';
 
 export const CardRoot = styled.div`
   display: flex;
@@ -7,14 +7,19 @@ export const CardRoot = styled.div`
   justify-content: center;
   width: 100%;
   margin-bottom: 24px;
-  ${respondTo.sm} {
+  ${media.sm`
     width: auto;
     margin-bottom: 0;
+  `};
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
   }
 `;
 
 export const CardInfo = styled.div`
-  color: ${({ theme }) => theme.color.bg[0]};
+  --color: ${({ theme }) => theme.color?.bg[0]};
+  color: var(--color, #fff);
   padding: 20px;
   position: absolute;
   bottom: 0;
@@ -70,8 +75,8 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const CardBg = styled.div<{ imgSrc: string }>`
-  background-image: url(${({ imgSrc }) => imgSrc});
+export const CardBg = styled.div<{ imgSrc?: string }>`
+  background-image: url(${({ imgSrc }) => !!imgSrc && imgSrc});
   position: absolute;
   top: -20px;
   left: -20px;
@@ -115,12 +120,11 @@ export const CardWrap = styled.div`
   margin: 10px;
   transform: perspective(800px);
   transform-style: preserve-3d;
-  cursor: pointer;
-  ${respondTo.sm} {
+  ${media.sm`
     flex: 0 0 480;
     width: 480px;
     height: 320px;
-  }
+  `};
   &:hover {
     ${CardInfo} {
       transform: translateY(0);

@@ -21,12 +21,10 @@
   "homepage": "publisher.hapas.io",
   "license": "ISC",
   "dependencies": {
+    "@bit/hansanghyeon.card.ditto": "^1.0.8",
+    "@bit/hansanghyeon.card.hoverover": "^1.0.5",
+    "@bit/hansanghyeon.list-item.notion-style": "^1.0.1",
     "@emotion/core": "^10.0.35",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-regular-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
     "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-docs": "^6.0.21",
     "@storybook/addon-knobs": "^6.0.21",
@@ -38,6 +36,7 @@
     "@types/node": "^13.13.15",
     "@types/react-lottie": "^1.2.5",
     "axios": "^0.19.2",
+    "dayjs": "^1.8.36",
     "framer-motion": "^1.11.1",
     "gsap": "^3.5.1",
     "html-react-parser": "^0.10.5",
@@ -48,8 +47,8 @@
     "prismjs": "^1.21.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-icons": "^3.11.0",
     "react-lottie": "^1.2.3",
-    "storybook-addon-preview": "^1.2.0",
     "styled-bootstrap-grid": "^3.1.0",
     "styled-components": "^5.1.1"
   },
@@ -57,11 +56,11 @@
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/lodash": "^4.14.160",
-    "@types/react": "^16.9.48",
-    "@types/react-dom": "^16.9.8",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
@@ -95,10 +94,7 @@
     }
   },
   "lint-staged": {
-    "*.tsx": [
-      "eslint --fix"
-    ],
-    "*.ts": [
+    "*.ts|x": [
       "eslint --fix"
     ]
   }

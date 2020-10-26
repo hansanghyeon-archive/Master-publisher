@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCaretDown,
-  faCaretUp,
-  faChevronRight,
-  faChevronLeft,
-} from '@fortawesome/free-solid-svg-icons';
+  FaCaretDown,
+  FaCaretUp,
+  FaChevronRight,
+  FaChevronLeft,
+} from 'react-icons/fa';
 import {
   Img,
   Wrap,
@@ -44,15 +43,15 @@ const SeriesList = ({ data }: any) => {
       </Body>
       <Footer>
         <MoreBtn type="button" onClick={_handleClick}>
-          <FontAwesomeIcon icon={toggle ? faCaretDown : faCaretUp} />
+          {toggle ? <FaCaretDown /> : <FaCaretUp />}
           <span>{toggle ? '목록보기' : '접기'}</span>
         </MoreBtn>
         <Controller>
           <ArrowBtn type="button">
-            <FontAwesomeIcon icon={faChevronLeft} />
+            <FaChevronLeft />
           </ArrowBtn>
           <ArrowBtn type="button">
-            <FontAwesomeIcon icon={faChevronRight} />
+            <FaChevronRight />
           </ArrowBtn>
         </Controller>
       </Footer>

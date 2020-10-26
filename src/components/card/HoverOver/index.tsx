@@ -9,16 +9,18 @@ type State = {
   mouseLeaveDelay: any;
   cardStyleReset: boolean;
 };
-type props = {
-  data: {
-    title: string;
-    content: string;
-    imgSrc: string;
-    interactionValue?: number;
-  };
+type HoverOverCardProps = {
+  title?: string;
+  content?: string;
+  imgSrc?: string;
+  interactionValue?: number;
 };
-const HoverOverCard = ({ data }: props) => {
-  const { title, content, imgSrc, interactionValue } = data;
+const HoverOverCard: React.FC<HoverOverCardProps> = ({
+  title,
+  content,
+  imgSrc,
+  interactionValue,
+}: HoverOverCardProps) => {
   const CardRef = useRef<HTMLDivElement>(null);
 
   const [width, setWidth] = useState(0);
@@ -89,6 +91,12 @@ const HoverOverCard = ({ data }: props) => {
       </CardWrap>
     </CardRoot>
   );
+};
+HoverOverCard.defaultProps = {
+  title: '제목',
+  content: '내용',
+  imgSrc: 'https://source.unsplash.com/collection/9641990',
+  interactionValue: 15,
 };
 
 export default HoverOverCard;

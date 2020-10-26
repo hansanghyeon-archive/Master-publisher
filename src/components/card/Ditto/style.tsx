@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { respondTo } from '@style/gridSystem';
+import { media } from 'styled-bootstrap-grid';
 
 export const DittoRoot = styled.div`
-  color: ${({ theme }) => theme.color.text[0]};
+  --bg-color: ${({ theme }) => theme.color?.bg[0]};
+  --bg1-color: ${({ theme }) => theme.color?.bg[1]};
+  --bg-blur-color: ${({ theme }) =>
+    !!theme.color?.bg[0] && transparentize(0.75, theme.color?.bg[0])};
+  --color: ${({ theme }) => theme.color?.text[0]};
+  --color1: ${({ theme }) => theme.color?.text[1]};
 
+  color: var(--color, #333);
   padding: 1rem;
   min-height: 48px;
   position: relative;
@@ -29,8 +35,9 @@ const BaseMain = styled.div`
 
 const BaseThumnail = styled.div<{ imgSrc?: string }>`
   background-image: url(${({ imgSrc }) => imgSrc});
-  background-color: ${({ theme }) => transparentize(0.75, theme.color.bg[0])};
+  background-color: var(--bg-blur-color, ${transparentize(0.75, '#fff')});
   width: 80px;
+  max-width: calc(280px + 2rem);
   height: 100%;
   position: absolute;
   z-index: 100;
@@ -45,7 +52,7 @@ const BaseThumnail = styled.div<{ imgSrc?: string }>`
 `;
 
 const BaseMainInner = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[0]};
+  background-color: var(--bg-color, #fff);
   position: relative;
   z-index: 200;
   border-radius: 8px;
@@ -54,11 +61,12 @@ const BaseMainInner = styled.div`
   will-change: padding-left, z-index, transform, margin-left, box-shadow;
 `;
 
-export const Body = styled.div`
+const BaseBody = styled.div`
   padding: 0.5rem 1rem;
 `;
-export const Title = styled.div`
+export const BaseTitle = styled.div`
   margin-bottom: 8px;
+  max-width: 280px;
   font-weight: bold;
 `;
 export const Footer = styled.div`
@@ -76,21 +84,28 @@ export const Footer = styled.div`
 `;
 
 const BaseContent = styled.div`
-  color: ${({ theme }) => theme.color.text[1]};
+  color: var(--color1, #4a4f57);
 
   max-width: 280px;
-  height: 3.9rem;
+  height: 4rem;
   overflow: hidden;
   font-size: 0.875rem;
+  transition: max-width 0.45s;
 `;
+
 export const Date = styled.div`
-  color: ${({ theme }) => theme.color.text[2]};
+  color: var(--color1, #4a4f57);
   font-size: 0.75rem;
 `;
 export const CategoryLabel = styled.div`
-  background-color: ${({ theme }) => theme.color.bg[1]};
-  border-radius: 8px;
-  padding: 0.25rem 8px;
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+    margin-right: 8px;
+    background-color: var(--bg1-color, #f6f8ff);
+    border-radius: 8px;
+    padding: 0.25rem 8px;
+  }
 `;
 
 const List = {
@@ -123,12 +138,6 @@ const nonThumnail = {
     margin-left: 0 !important;
     margin-top: 0 !important;
     border-radius: 8px !important;
-    ${BaseContent} {
-      ${respondTo.sm} {
-        max-width: calc(280px + 80px - 1rem);
-      }
-      transition: max-width 0.45s;
-    }
   `,
   main: css`
     &:hover {
@@ -140,7 +149,10 @@ const nonThumnail = {
     }
   `,
   content: css`
-    max-width: 280px;
+    ${media.sm`
+      max-width: calc(280px + 80px - 1rem);
+    `}
+    transition: max-width 0.45s;
   `,
 };
 const Grid = {
@@ -173,6 +185,9 @@ const Grid = {
       }
     }
   `,
+  body: css`
+    padding: 1rem;
+  `,
 };
 
 type IsThumnail = {
@@ -192,6 +207,15 @@ export const Thumnail = styled(BaseThumnail)<Props>`
 export const MainInner = styled(BaseMainInner)<Props>`
   ${({ isGrid }) => isGrid && Grid.mainInner}
   ${({ isThumnail }) => !isThumnail && nonThumnail.mainInner}
+  ${({
+    isGrid,
+    isThumnail,
+  }) =>
+    isGrid &&
+    !isThumnail &&
+    css`
+      max-width: calc(280px + 2rem);
+    `};
 `;
 
 export const Main = styled(BaseMain)<Props>`
@@ -200,5 +224,13 @@ export const Main = styled(BaseMain)<Props>`
 `;
 
 export const Content = styled(BaseContent)<IsThumnail>`
+  ${({ isThumnail }) => !isThumnail && nonThumnail.content}
+`;
+
+export const Body = styled(BaseBody)<Props>`
+  ${({ isGrid, isThumnail }) => isGrid && isThumnail && Grid.body}
+`;
+
+export const Title = styled(BaseTitle)<IsThumnail>`
   ${({ isThumnail }) => !isThumnail && nonThumnail.content}
 `;

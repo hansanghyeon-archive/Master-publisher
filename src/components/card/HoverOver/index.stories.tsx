@@ -1,11 +1,10 @@
 import React from 'react';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
-import { withPreview } from 'storybook-addon-preview';
 import styled from 'styled-components';
-
+// Components
 import CenterWrap from '@/wrap/Center';
+import * as Bit from '@bit/hansanghyeon.card.hoverover';
 import HoverOverCard from '.';
-import previews from './previews/index';
 
 const FlexBox = styled.div`
   display: flex;
@@ -16,7 +15,6 @@ export default {
   component: HoverOverCard,
   decorators: [
     withKnobs,
-    withPreview,
     (storyFn: any) => (
       <CenterWrap>
         <FlexBox>{storyFn()}</FlexBox>
@@ -76,10 +74,11 @@ const mockData = [
 export const standard = () => {
   return mockData.map((data) => {
     const props = KnobsGroup(data);
-    return <HoverOverCard {...props} />;
+    return <HoverOverCard {...props.data} />;
   });
 };
 
-standard.parameters = {
-  preview: previews,
+export const bit = () => {
+  const BitHoverOverCard = Bit.default;
+  return <BitHoverOverCard {...mockData[0]} />;
 };

@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { withPreview } from 'storybook-addon-preview';
-//
-import CenterWrap from '@/wrap/Center';
-import previews from './previews/index';
 // components
+import CenterWrap from '@/wrap/Center';
 import ErrorRefrashBtn from '.';
 
 const WidthWrap = styled.div`
@@ -22,7 +19,6 @@ export default {
   title: 'components/Button/ErrorRefrash',
   component: ErrorRefrashBtn,
   decorators: [
-    withPreview,
     (storyFn: any) => (
       <CenterWrap>
         <WidthWrap>{storyFn()}</WidthWrap>
@@ -32,6 +28,3 @@ export default {
 };
 
 export const standard = () => <ErrorRefrashBtn />;
-standard.parameters = {
-  preview: previews,
-};

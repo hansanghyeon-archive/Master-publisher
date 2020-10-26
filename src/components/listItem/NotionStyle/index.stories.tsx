@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
-import { withPreview } from 'storybook-addon-preview';
+import * as Bit from '@bit/hansanghyeon.list-item.notion-style';
 // Context
 import CenterWrap from '@/wrap/Center';
 // Components
@@ -57,17 +57,26 @@ export default {
   component: NotionStyleListItem,
   decorators: [
     withKnobs,
-    withPreview,
     (storyFn: any) => <CenterWrap>{storyFn()}</CenterWrap>,
   ],
 };
 export const standard = () => {
   const imgSrc = text(
     'Image src',
-    'https://wp.hapas.io/wp-content/uploads/4log/icons/React.png',
+    'https://wp.hapas.io/wp-content/uploads/4log/icons/react.png',
   );
   const Text = text('Text', 'React');
   return <NotionStyleListItem imgSrc={imgSrc}>{Text}</NotionStyleListItem>;
+};
+
+export const bit = () => {
+  const NotionStyle = Bit.default;
+  const imgSrc = text(
+    'Image src',
+    'https://wp.hapas.io/wp-content/uploads/4log/icons/react.png',
+  );
+  const Text = text('Text', 'React');
+  return <NotionStyle imgSrc={imgSrc}>{Text}</NotionStyle>;
 };
 
 export const list = () => {

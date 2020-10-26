@@ -1,12 +1,15 @@
 import React from 'react';
 import { Wrap, ImgWrap } from './style';
 
-interface Props {
+type NotionStyleListItemProps = {
   imgSrc?: string;
   children: React.ReactNode;
-}
+};
 
-const NotionStyleListItem = ({ imgSrc, children }: Props) => (
+const NotionStyleListItem: React.FC<NotionStyleListItemProps> = ({
+  imgSrc,
+  children,
+}: NotionStyleListItemProps) => (
   <Wrap>
     <ImgWrap>
       {imgSrc ? (

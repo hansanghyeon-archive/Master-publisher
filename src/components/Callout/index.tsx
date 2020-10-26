@@ -23,8 +23,9 @@ const ColWrap = styled(Col)`
 `;
 
 interface Props extends StyledProps {
-  icon: string;
+  icon: string | undefined;
   children: React.ReactNode;
+  bgColor: string | undefined;
 }
 
 const Callout = ({ icon, children, bgColor }: Props) => (

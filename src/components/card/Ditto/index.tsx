@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-
-import moment from 'moment';
+import React, { useLayoutEffect, useRef } from 'react';
+import dayjs from 'dayjs';
 import { TimelineLite, Power1 } from 'gsap';
-import NotionStyleListItem from '@/listItem/NotionStyle';
 import {
   DittoRoot,
   Main,
@@ -17,26 +15,27 @@ import {
 } from './style';
 
 interface DittoProps {
-  data: {
-    excerpt: string;
-    date: number;
-    footer: {
-      icon: string;
-      title: string;
-    };
-    imgSrc?: string;
-    title: string;
-    isGrid: boolean;
-  };
+  excerpt: string;
+  date: number;
+  footer: () => React.ReactNode;
+  imgSrc?: string;
+  title: () => React.ReactNode;
+  isGrid: boolean;
 }
-const Ditto = ({ data }: DittoProps) => {
-  const { imgSrc, excerpt, date, footer, title, isGrid } = data;
+const Ditto: React.FC<DittoProps> = ({
+  imgSrc,
+  excerpt,
+  date,
+  footer,
+  title,
+  isGrid,
+}: DittoProps) => {
   const MainInnerRef = useRef<HTMLDivElement>(null);
   const _excerpt = () => {
     if (excerpt.length < 118) return excerpt;
     return `${excerpt.substring(0, 110)}...`;
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = new TimelineLite();
     if (isGrid) {
       tl.to(MainInnerRef.current, 0.05, {
@@ -56,22 +55,21 @@ const Ditto = ({ data }: DittoProps) => {
       <Main isGrid={isGrid} isThumnail={!!imgSrc}>
         <Thumnail imgSrc={imgSrc} isGrid={isGrid} isThumnail={!!imgSrc} />
         <MainInner ref={MainInnerRef} isGrid={isGrid} isThumnail={!!imgSrc}>
-          <Body>
-            <Title>{title}</Title>
+          <Body isGrid={isGrid} isThumnail={!!imgSrc}>
+            <Title isThumnail={!!imgSrc}>{title()}</Title>
             <Content isThumnail={!!imgSrc}>{_excerpt()}</Content>
           </Body>
           <Footer>
-            <CategoryLabel>
-              <NotionStyleListItem imgSrc={footer.icon}>
-                {footer.title}
-              </NotionStyleListItem>
-            </CategoryLabel>
-            <Date>{moment(date).format('YYYY.M.D')}</Date>
+            <CategoryLabel>{footer()}</CategoryLabel>
+            <Date>{dayjs(date).format('YYYY.M.D')}</Date>
           </Footer>
         </MainInner>
       </Main>
     </DittoRoot>
   );
+};
+Ditto.defaultProps = {
+  imgSrc: '',
 };
 
 export default Ditto;
