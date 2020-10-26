@@ -151,3 +151,5 @@ temp/
 __test__
 
 .bitmap
+
+.vercel
