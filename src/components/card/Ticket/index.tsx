@@ -213,19 +213,19 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
             <div className="bus">
               <div className="bus-obj">
                 <img
-                  src={`https://wp.hapas.io/wp-content/uploads/4log/storybook/card/ticket/bus${bus}.svg`}
+                  src={`${process.env.FILE_SERVER}/4log/storybook/card/ticket/bus${bus}.svg`}
                   alt=""
                 />
               </div>
               <div className="bus-statsion">
                 <img
                   className="human"
-                  src={`https://wp.hapas.io/wp-content/uploads/4log/storybook/card/ticket/human${human}.svg`}
+                  src={`${process.env.FILE_SERVER}/4log/storybook/card/ticket/human${human}.svg`}
                   alt=""
                 />
                 <img
                   className="sign"
-                  src="https://wp.hapas.io/wp-content/uploads/4log/storybook/card/ticket/bus-stop.svg"
+                  src={`${process.env.FILE_SERVER}/4log/storybook/card/ticket/bus-stop.svg`}
                   alt=""
                 />
               </div>
@@ -241,7 +241,7 @@ const TicketCard = ({ data, onClick, isUsed }: TicketType) => {
           </CutLine>
           <Barcode className={`${name}-barcode`}>
             <img
-              src="https://wp.hapas.io/wp-content/uploads/4log/storybook/card/ticket/barcode.png"
+              src={`${process.env.FILE_SERVER}/4log/storybook/card/ticket/barcode.png`}
               alt=""
             />
           </Barcode>

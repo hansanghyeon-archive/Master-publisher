@@ -34,14 +34,15 @@ const ErrorRefrashBtn = () => {
     setHover(false);
     TweenMax.fromTo([icon.current], 0.8, { opacity: 0 }, { opacity: 1 });
   };
+  console.log(process.env.FILE_SERVER);
   return (
     <Wrap onMouseEnter={_handleHover} onMouseLeave={_handleMoudeLeave}>
       <img
         ref={icon}
         src={
           hover
-            ? 'https://wp.hapas.io/wp-content/uploads/4log/icons/redo-alt-solid.svg'
-            : 'https://wp.hapas.io/wp-content/uploads/4log/icons/alert.svg'
+            ? `${process.env.FILE_SERVER}/4log/icons/redo-alt-solid.svg`
+            : `${process.env.FILE_SERVER}/4log/icons/alert.svg`
         }
         alt=""
       />

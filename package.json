@@ -19,7 +19,7 @@
     "url": "git+https://github.com/Hansanghyeon/Master-publisher/"
   },
   "author": "Hansanghyeon",
-  "homepage": "publisher.hapas.io",
+  "homepage": "publisher.hyeon.pro",
   "license": "ISC",
   "dependencies": {
     "@bit/hansanghyeon.card.ditto": "^1.0.8",

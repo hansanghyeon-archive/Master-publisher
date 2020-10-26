@@ -18,7 +18,7 @@ export default {
 export const standard = () => {
   const imgSrc = text(
     'Image Src',
-    'https://wp.hapas.io/wp-content/uploads/4log/gif/ditto-02.gif',
+    `${process.env.FILE_SERVER}/4log/gif/ditto-02.gif`,
   );
   const excerpt = text(
     'excerpt',
@@ -29,7 +29,7 @@ export const standard = () => {
     <NotionStyleListItem
       imgSrc={text(
         'Category Icon 1',
-        'https://wp.hapas.io/wp-content/uploads/4log/icons/pokemon/flat2/038-gaming.svg',
+        `${process.env.FILE_SERVER}/4log/icons/pokemon/flat2/038-gaming.svg`,
       )}
     >
       {text('Category title 1', 'Pokemon')}
@@ -39,7 +39,7 @@ export const standard = () => {
     <NotionStyleListItem
       imgSrc={text(
         'Category Icon 2',
-        'https://wp.hapas.io/wp-content/uploads/4log/icons/pokemon/flat2/038-gaming.svg',
+        `${process.env.FILE_SERVER}/4log/icons/pokemon/flat2/038-gaming.svg`,
       )}
     >
       {text('Category title 2', 'Pokemon')}
@@ -81,7 +81,7 @@ export const bit = () => {
   const BitDitto = Bit.default;
   const imgSrc = text(
     'Image Src',
-    'https://wp.hapas.io/wp-content/uploads/4log/gif/ditto-02.gif',
+    `${process.env.FILE_SERVER}/4log/gif/ditto-02.gif`,
   );
   const excerpt = text(
     'excerpt',
@@ -92,7 +92,7 @@ export const bit = () => {
     <NotionStyleListItem
       imgSrc={text(
         'Category Icon',
-        'https://wp.hapas.io/wp-content/uploads/4log/icons/pokemon/flat2/038-gaming.svg',
+        `${process.env.FILE_SERVER}/4log/icons/pokemon/flat2/038-gaming.svg`,
       )}
     >
       {text('Category title', 'Pokemon')}
