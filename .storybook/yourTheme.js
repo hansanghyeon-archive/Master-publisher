@@ -32,6 +32,6 @@ export default create({
   // inputBorderRadius: 4,
 
   brandTitle: 'Master Publisher',
-  brandUrl: 'https://publisher.hapas.io/',
+  brandUrl: 'https://publisher.hyeon.pro/',
   // brandImage: 'https://placehold.it/350x150',
 });

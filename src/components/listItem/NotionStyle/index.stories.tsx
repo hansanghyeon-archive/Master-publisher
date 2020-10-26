@@ -63,7 +63,7 @@ export default {
 export const standard = () => {
   const imgSrc = text(
     'Image src',
-    'https://wp.hapas.io/wp-content/uploads/4log/icons/react.png',
+    `${process.env.FILE_SERVE}/4log/icons/react.png`,
   );
   const Text = text('Text', 'React');
   return <NotionStyleListItem imgSrc={imgSrc}>{Text}</NotionStyleListItem>;
@@ -73,7 +73,7 @@ export const bit = () => {
   const NotionStyle = Bit.default;
   const imgSrc = text(
     'Image src',
-    'https://wp.hapas.io/wp-content/uploads/4log/icons/react.png',
+    `${process.env.FILE_SERVE}/4log/icons/react.png`,
   );
   const Text = text('Text', 'React');
   return <NotionStyle imgSrc={imgSrc}>{Text}</NotionStyle>;
