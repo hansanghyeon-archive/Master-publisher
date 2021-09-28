@@ -17,19 +17,19 @@ module.exports = ({ config }) => {
       presets: [['react-app', { flow: false, typescript: true }]],
     },
   });
-  config.module.rules.push({
-    test: /\.scss$/,
-    use: [
-      'style-loader',
-      'css-loader',
-      {
-        loader: 'sass-loader',
-        options: {
-          prependData: `@import '~@style/global';`,
-        },
-      },
-    ],
-  });
+  // config.module.rules.push({
+  //   test: /\.scss$/,
+  //   use: [
+  //     'style-loader',
+  //     'css-loader',
+  //     {
+  //       loader: 'sass-loader',
+  //       options: {
+  //         prependData: `@import '~@style/global';`,
+  //       },
+  //     },
+  //   ],
+  // });
   config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx');
   config.resolve.alias = {
     '@': path.resolve(__dirname, '../src/components'),

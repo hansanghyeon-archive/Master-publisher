@@ -22,9 +22,6 @@
   "homepage": "publisher.hyeon.pro",
   "license": "ISC",
   "dependencies": {
-    "@bit/hansanghyeon.card.ditto": "^1.0.8",
-    "@bit/hansanghyeon.card.hoverover": "^1.0.5",
-    "@bit/hansanghyeon.list-item.notion-style": "^1.0.1",
     "@emotion/core": "^10.0.35",
     "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-docs": "^6.0.21",
@@ -57,8 +54,6 @@
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
     "@types/lodash": "^4.14.160",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
@@ -80,9 +75,7 @@
     "file-loader": "^5.1.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.2.13",
-    "node-sass": "^4.14.1",
     "prettier": "^2.1.1",
-    "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "themeprovider-storybook": "^1.6.2",
     "typescript": "^3.9.7",
@@ -90,8 +83,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
